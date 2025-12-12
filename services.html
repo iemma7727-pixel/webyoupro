@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logopng.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Services Webyoupro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            opacity: 0.5;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: -20px -10px; /* نقصنا الارتفاع */
+            margin-top: 180px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero small {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 25px;
+        }
+
+        /* IMAGE STYLE */
+        .hero-img {
+            width: 85%;
+            margin: 90px auto;
+            display: block;
+            border-radius: 40px;
+        }
+
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+/* SOLUTIONS SECTION */
+.solutions {
+    width: 85%;
+    margin: 80px auto;
+}
+
+.solutions-title {
+    font-size: 42px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.solution-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+}
+
+.solution-item .left {
+    width: 30%;
+}
+
+.solution-item .left h3 {
+    font-size: 30px;
+}
+
+.solution-item .right {
+    width: 65%;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    .solution-item {
+        flex-direction: column;
+    }
+
+    .solution-item .left,
+    .solution-item .right {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+}
+.logo {
+  width: 130px;        /* قدّر الحجم اللي بغيتي */
+  height: auto;
+  object-fit: contain;
+  background: none;   /* مهم */
+  box-shadow: none;   /* مهم */
+  border-radius: 0;   /* باش مايتقصّش اللوغو */
+}
+footer {
+  padding-bottom: 0px !important;   /* نقص المسافة */
+  margin-bottom: 0 !important;       /* شيل المارجن لي تحت */
+}
+.wyp-footer {
+  background: #000000;
+  color: #fff;
+  padding: 50px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.wyp-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.wyp-logo {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.wyp-desc {
+  font-size: 15px;
+  color: #bbb;
+  max-width: 260px;
+  line-height: 1.6;
+}
+
+.wyp-right {
+  text-align: right;
+}
+
+.wyp-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.wyp-link:hover {
+  color: #C0584F;
+}
+
+.wyp-copy {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wyp-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .wyp-right {
+    text-align: center;
+  }
+}
+.wyp-logo {
+  width: 140px;      /* صغّر أو كبر حسب الحجم */
+  height: auto;
+}
+nav ul li a {
+    text-decoration: none;   /* تحييد الخط تحت الرابط */
+    color: inherit;          /* يرجع اللون الأصلي بلا ما يتبدل */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;            /* تأثير زوين فـ hover */
+}
+nav {
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav .logo {
+    width: 130px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    opacity: 0.5;
+}
+
+/* زر المنيو فالموبايل */
+.menu-btn {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/*       MOBILE          */
+/* ===================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 6%;
+    }
+
+    /* كنبينو زر المنيو */
+    .menu-btn {
+        display: block;
+        user-select: none;
+    }
+
+    /* كيختفي الـ UL فالوضع العادي */
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+        display: none;
+    }
+
+    /* ملي كيتفتح */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+<nav>
+    <img src="pn1.png" alt="Logo" class="logo" />
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="nav-links" class="nav-center">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projet.html">Projects</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="kontakt.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <small>Our services</small>
+        <h1>Turning Vision <br> Into Impact </h1>
+    </section>
+
+    <!-- IMAGE -->
+<video class="hero-img" autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+</video>
+    <!-- SOLUTIONS SECTION (الكود لي عطيتيني ودمجتو ليك) -->
+    <section class="solutions">
+
+        <h2 class="solutions-title">Our solutions</h2>
+
+        <!-- واحد الخدمة -->
+        <div class="solution-item">
+            <div class="left">
+                <h3>Websites and platforms</h3>
+            </div>
+            <div class="right">
+                <p>
+                    In our team, developers work alongside designers. 
+                    This is crucial in creating a fast and responsive website that excites the audience.
+                </p>
+                <a class="btn" href="#">Read more</a>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- الخدمة الثانية -->
+        <div class="solution-item">
+            <div class="left">
+                <h3>Mobile applications</h3>
+            </div>
+            <div class="right">
+                <p>
+                    We don’t do cookie-cutter solutions. Every mobile app is based on deep user research and prototype testing.
+                </p>
+                <a class="btn" href="#">Read more</a>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- الخدمة الثالثة -->
+        <div class="solution-item">
+            <div class="left">
+                <h3>Strategy and branding</h3>
+            </div>
+            <div class="right">
+                <p>
+                    We build your brand identity through logos, mockups, corporate identity, and everything that makes your brand stand out.
+                </p>
+                <a class="btn" href="#">Read more</a>
+            </div>
+        </div>
+
+    </section>
+<video crossorigin="anonymous" autoplay="" playsinline="" loop="" muted=""><source src="/assets/footer/ropes.mp4" media="(min-width:768px)"><source src="/assets/footer/ropes-sm.mp4?2"></video>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

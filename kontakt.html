@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logopng.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Contact Webyoupro</title>
+<style>
+    /* ---- Base ---- */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #0e0e0e;
+    color: white;
+}
+/* ------------------------------
+   GLOBAL
+---------------------------------*/
+.cb-contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+}
+
+.cb-contact-header h1 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 50px;
+}
+
+/* ------------------------------
+   GRID
+---------------------------------*/
+.cb-contact-cgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+/* ------------------------------
+   CHECKBOX / RADIO (Cuberto style)
+---------------------------------*/
+.cb-input_checkbox {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    padding: 16px 20px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    transition: .3s ease;
+}
+
+.cb-input_checkbox:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.cb-input_checkbox input {
+    display: none;
+}
+
+.cb-input_checkbox-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cb-input_checkbox-border {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: .3s ease;
+    position: relative;
+}
+
+.cb-input_checkbox input:checked + .cb-input_checkbox-box .cb-input_checkbox-border {
+    border-color: #fff;
+    background: #fff;
+}
+
+.cb-input_checkbox-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Border animation effect */
+.cb-input_checkbox::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    transition: .4s ease;
+}
+
+.cb-input_checkbox.active::after {
+    border-color: #fff;
+    transform: scale(1.03);
+}
+
+/* ------------------------------
+   INPUTS (Cuberto underline)
+---------------------------------*/
+.cb-input_light-box {
+    position: relative;
+}
+
+.cb-input_light-box input,
+.cb-input_light-box textarea {
+    width: 100%;
+    padding: 14px 0;
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+
+.cb-input_light-line {
+    height: 2px;
+    width: 100%;
+    background: rgba(255,255,255,0.3);
+    transition: .3s ease;
+}
+
+.cb-input_light-box input:focus + .cb-input_light-line,
+.cb-input_light-box textarea:focus + .cb-input_light-line {
+    background: #fff;
+}
+
+/* ------------------------------
+   FILE UPLOAD
+---------------------------------*/
+.cb-input_file {
+    border: 1px dashed rgba(255,255,255,0.4);
+    border-radius: 18px;
+    padding: 28px;
+    text-align: center;
+    transition: .3s;
+}
+
+.cb-input_file:hover {
+    border-color: #fff;
+}
+
+.cb-input_file-btn {
+    padding: 14px 22px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cb-input_file-btn:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+/* ------------------------------
+   BUTTON (Cuberto)
+---------------------------------*/
+.cb-btn_cta.-afull {
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 14px;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.cb-btn_cta.-afull:hover {
+    transform: translateY(-2px);
+    background: #eaeaea;
+}
+
+.cb-btn_cta:disabled {
+    opacity: .4;
+}
+
+/* ------------------------------
+   TERMS
+---------------------------------*/
+.cb-contact-terms {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 22px;
+}
+.cb-contact-terms a {
+    color: #fff;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            opacity: 0.5;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: -20px -30px; /* نقصنا الارتفاع */
+            margin-top: 180px;
+            width: 100%;
+            text-align: center;
+            margin-top: 100px;
+
+        }
+
+        .hero small {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 25px;
+
+        }
+nav ul li a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+
+/* SOLUTIONS SECTION */
+.solutions {
+    width: 85%;
+    margin: 80px auto;
+}
+
+.solutions-title {
+    font-size: 42px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.solution-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+}
+
+.solution-item .left {
+    width: 30%;
+}
+
+.solution-item .left h3 {
+    font-size: 30px;
+}
+
+.solution-item .right {
+    width: 65%;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    .solution-item {
+        flex-direction: column;
+    }
+
+    .solution-item .left,
+    .solution-item .right {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+}
+.logo {
+  width: 130px;        /* قدّر الحجم اللي بغيتي */
+  height: auto;
+  object-fit: contain;
+  background: none;   /* مهم */
+  box-shadow: none;   /* مهم */
+  border-radius: 0;   /* باش مايتقصّش اللوغو */
+}
+.cb-overview-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* اليسار صغير – اليمين كبير */
+  padding: 80px 0;
+  gap: 80px;
+  align-items: flex-start;
+}
+.cb-contact-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  color: white;
+}
+
+.cb-contact-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cb-contact-group {
+  margin-bottom: 30px;
+}
+
+.cb-contact-label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+}
+
+.cb-contact-cgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* Checkbox / Radio style */
+.cb-input_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cb-input_checkbox input {
+  accent-color: #fff;
+  width: 18px;
+  height: 18px;
+}
+
+/* Inputs */
+.cb-input_light-box {
+  position: relative;
+}
+
+.cb-input_light-box input,
+.cb-input_light-box textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #777;
+  padding: 10px 0;
+  color: white;
+  outline: none;
+}
+
+.cb-input_light-box input:focus,
+.cb-input_light-box textarea:focus {
+  border-bottom: 1px solid white;
+}
+
+/* File input */
+.cb-input_file-btn {
+  padding: 10px 18px;
+  background: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Submit button */
+.cb-btn_cta {
+  padding: 15px 30px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.cb-btn_cta:hover {
+  background: #ddd;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#000000,#000000);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding:40px 18px;
+}
+
+/* ===== Layout ===== */
+.cb-contact-container{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+
+/* header */
+.cb-contact-header h1{
+  font-size: 44px;
+  line-height: 1.05;
+  margin:0 0 18px 0;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  display:inline-block;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* grid form layout */
+.cb-contact-form{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items:start;
+}
+
+/* left column (inputs) */
+.cb-left {
+  display: grid;
+  gap: 18px;
+}
+
+/* right column (info / submit) */
+.cb-right{
+  position: relative;
+}
+
+/* groups */
+.cb-contact-group {
+  display: block;
+}
+
+/* label above group */
+.cb-contact-label{
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight:600;
+  letter-spacing:0.2px;
+}
+
+/* checkbox grid */
+.cb-contact-cgrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+/* ===== Checkbox style (Cuberto-like) ===== */
+.cb-input.cb-input_checkbox{
+  position: relative;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  background: rgba(255,255,255,0.01);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s;
+  user-select:none;
+  border: 1px solid rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+.cb-input.cb-input_checkbox:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+  background: rgba(255,255,255,0.02);
+}
+.cb-input.cb-input_checkbox input{
+  appearance: none;
+  -webkit-appearance:none;
+  width:18px;height:18px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  position: relative;
+}
+.cb-input.cb-input_checkbox input:checked{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  border-color: rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(123,97,255,0.12) inset;
+}
+
+/* fancy title */
+.cb-input_checkbox-title{
+  font-size:14px;
+  color: #000000;
+  font-weight:600;
+  display:inline-block;
+}
+
+.services-container {
+  margin-top: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.services-title {
+  width: 100%;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-left: 80px; /* بدّل الرقم اللي بغيتي */
+
+}
+.services-wrapper {
+  width: 100%;
+  max-width: 1100px;   /* ضروري باش العناصر يبقاو فـ 3 أعمدة */
+  margin: 0 auto;      /* وسط الصفحة */
+  
+
+}
+
+.service-pill {
+  position: relative;
+  cursor: pointer;
+  padding: 12px 18px;
+  border: 1px solid #fff; /* نفس لون الصورة */
+  border-radius: 999px;
+  font-size: 24px;
+  font-weight: 100;
+  transition: all 0.25s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 6px; /* حطيت غير شوية مسافة متوازنة */
+}
+
+
+.service-pill:hover {
+  transform: translateY(-2px);
+}
+
+.service-pill input {
+  display: none;
+}
+
+.service-pill span {
+  transition: color 0.3s ease;
+}
+
+/* -------- ACTIVE STATE (ملي كتختار) -------- */
+.service-pill input:checked + span {
+  color: white;
+}
+
+.service-pill input:checked ~ span {
+  color: white;
+}
+
+.service-pill input:checked + span,
+.service-pill input:checked ~ span {
+  color: #fff;
+}
+
+.service-pill input:checked + span::before {
+  background: #ffffff;
+}
+
+/* اللون الأسود ملي كتكون selected */
+.service-pill input:checked + span,
+.service-pill input:checked ~ span,
+.service-pill input:checked + span,
+.service-pill:has(input:checked) {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+/* ----------- الترتيب 3 / 2 / 1 ----------- */
+
+/* الحبة الرابعة (باش تدير غير جوج فالسطر الثاني) */
+.services-wrapper .service-pill:nth-child(4) {
+  grid-column: 1 / span 2;
+}
+
+/* الحبة الأخيرة (باش تجي بوحدها في السطر الثالث) */
+.services-wrapper .service-pill:last-child {
+  grid-column: 1 / span 3;
+}
+
+/* Active state */
+.service-pill input { display: none; }
+
+
+
+.contact-section {
+  padding: 30px 8%;
+  background: #000000; /* نفس الخلفية لي فالصورة */
+  margin-left: -50px;
+}
+
+.contact-form {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+/* TITLE LABEL */
+.form-label {
+  font-size: 25px;
+  color: #9d9d9d;
+  font-weight: 400;
+}
+
+/* INPUT STYLE */
+.form-input {
+  background: transparent !important;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #d6d6d6;
+  padding: 14px 0;
+  outline: none;
+  transition: .25s ease;
+  color: #ffffff;
+}
+
+/* Focus effect */
+.form-input:focus {
+  border-bottom-color: #ffffff;
+}
+
+/* TEXTAREA */
+.textarea {
+  height: 60px;       /* كانت 150px — نقصناها باش يطلع الخط */
+  resize: none;
+  line-height: 1.5;
+}
+.budget-block {
+  margin-top: 50px;      /* باش تبعد على الفورم */
+  display: block;        /* باش تبقى بوحدها */
+  
+}
+
+.budget-label {
+  color: #ffffff;
+  font-size: 26px;
+  display: block;
+  margin-left: 30px;
+}
+
+
+.budget-options {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+
+
+.budget-pill span {
+  padding: 12px 26px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;   /* نخلي الكتابة بيضاء ضروري */
+  font-size: 17px;
+  backdrop-filter: blur(6px);
+  transition: 0.25s ease;
+  display: inline-block;
+}
+
+/* ACTIVE STATE */
+.budget-pill input:checked + span {
+  background: rgb(0, 0, 0);
+  color: #ffffff !important;   /* تبقى بيضاء حتى فالنقرة */
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  transform: scale(1.05);
+}
+.budget-pill span:hover {
+  color: #ffffff !important;
+}
+
+
+/* الحبات (pills) */
+.budget-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.budget-pill {
+  padding: 10px 25px;
+  border: 1px solid #ffffff;
+  border-radius: 40px;
+  background: #000000;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 30px;
+  margin: 1px 3px; /* هادي كتقرب الحبات لبعضياتهم فقط */
+  color: #ffffff; /* ← باش الكتابة تولّي بيضاء */
+  margin-top: 30px; /* بدل الرقم حتى يجيك مناسب */
+  margin-left: 30px;
+}
+
+.budget-pill:hover {
+  background: #fefefe;
+  color: #000000;
+}
+
+/* Attachment block */
+.attachment-block {
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.attach-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 20px;   /* بدل 20px بالقيمة لي بغيتي */
+}
+
+.attach-icon {
+  font-size: 28px;
+}
+
+.attach-text {
+  font-size: 28px;
+}
+
+.attach-line {
+  width: 250px;
+  height: 0.5px;          /* خط رقيق بزاف */
+  background: rgba(255, 255, 255, 0.4); /* أبيض خفيف */
+  margin-top: 4px;        /* المسافة بين النص والخط */
+  margin-left: 25px;   /* بدل 20px بالقيمة لي بغيتي */
+}
+
+
+.attach-input {
+  display: none;      /* كنخبيه ونجعل block كامل كليكابل */
+}
+
+/* باش كامل block يصبح كليكابل */
+.attachment-block:hover .attach-text {
+  opacity: 0.8;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 6px;
+  opacity: 0.7;
+}
+
+
+/* Send button */
+.send-btn {
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  background: #000000;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #ffffff;        /* ← الكتابة بالبيض */
+  margin-top: 40px;      /* ← باش تهبط الحبة لتحت */
+  margin-left: 70px;   /* بدل 20px بالقيمة لي بغيتي */
+}
+
+.send-btn:hover {
+  background: #ffffff;
+  color: #000000;        /* ← ملي كيدوز الماوس تولي الكتابة كحلة */
+}
+.cb-footer {
+.cb-footer-container {
+width: 90%;
+max-width: 1400px;
+margin: auto;
+}
+
+
+.cb-footer-grid {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-bottom: 60px;
+}
+
+
+.cb-footer-grid-col {
+width: 48%;
+}
+
+
+.cb-footer-locations address {
+display: block;
+margin-bottom: 40px;
+}
+
+
+.cb-footer-location-caption {
+font-size: 14px;
+opacity: 0.6;
+margin-top: 10px;
+}
+
+
+.cb-footer-location-address {
+margin-top: 5px;
+line-height: 1.6;
+opacity: 0.8;
+}
+
+
+.cb-footer-navs a {
+display: block;
+font-size: 22px;
+margin-bottom: 12px;
+color: #fff;
+text-decoration: none;
+}
+
+
+.cb-footer-bgrid {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-top: 40px;
+}
+
+
+.cb-footer-socials a {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 45px;
+height: 45px;
+border-radius: 50%;
+border: 1px solid #fff;
+margin-left: 10px;
+}
+
+
+.cb-footer-copy {
+margin-top: 10px;
+opacity: 0.6;
+}
+.budget-options {
+  display: flex;
+  gap: 10px;
+}
+
+.budget-pill {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ملي كيتسيلكسا */
+.budget-pill.active {
+  background: white;
+  color: black;
+}
+nav a,
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+    text-decoration: none !important;
+}nav ul li a {
+    text-decoration: none;   /* تحييد الخط تحت الرابط */
+    color: inherit;          /* يرجع اللون الأصلي بلا ما يتبدل */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;            /* تأثير زوين فـ hover */
+}
+* {
+    text-decoration: none !important;
+}
+
+nav {
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav .logo {
+    width: 130px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    opacity: 0.5;
+}
+
+/* زر المنيو فالموبايل */
+.menu-btn {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/*       MOBILE          */
+/* ===================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 6%;
+    }
+
+    /* كنبينو زر المنيو */
+    .menu-btn {
+        display: block;
+        user-select: none;
+    }
+
+    /* كيختفي الـ UL فالوضع العادي */
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+        display: none;
+    }
+
+    /* ملي كيتفتح */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+@media (max-width: 850px) {
+
+    nav ul#nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+    }
+
+    nav ul#nav-links.active {
+        display: flex;
+    }
+}
+/* نخبيو جميع التفاصيل فالأول */
+
+</style>
+<head>
+<body>
+      <!-- NAVBAR -->
+    <nav>
+    <img src="pn1.png" alt="Logo" class="logo" />
+
+  <ul class="nav-center">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projet.html">Projects</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="kontakt.html">Contact</a></li>
+  </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Hey! Tell us all<br> the things </h1>
+    </section>
+
+<!-- Services -->
+
+<!-- Services Section -->
+<div class="services-container">
+  <p class="services-title">I'm interested in...</p>
+
+  <div class="services-wrapper">
+
+    <label class="service-pill" data-target="web-content">Website Design</label>
+    <label class="service-pill" data-target="ux-content">UX/UI design</label>
+    <label class="service-pill" data-target="product-content">Product design</label>
+    <label class="service-pill" data-target="motion-content">Motion Graphics</label>
+    <label class="service-pill" data-target="brand-content">Brand Identity</label>
+    <label class="service-pill" data-target="mobile-content">Mobile development</label>
+
+  </div>
+
+</div>
+
+
+<section class="contact-section">
+
+<section class="contact-section">
+  <form class="contact-form">
+
+    <label class="form-label">Your name</label>
+    <input type="text" class="form-input" />
+
+    <label class="form-label">Email</label>
+    <input type="email" class="form-input" />
+
+    <label class="form-label">Tell us about your project</label>
+    <textarea class="form-input textarea"></textarea>
+
+        <label class="form-label">Project budget (USD)</label>
+    <textarea class="form-input textarea"></textarea>
+
+  </form>
+</section>
+
+<div class="attachment-block" onclick="document.getElementById('fileUpload').click();">
+  <div class="attach-left">
+    <span class="attach-icon">📎</span>
+    <span class="attach-text">Add attachment</span>
+  </div>
+
+  <div class="attach-line"></div>
+
+  <!-- هنا غادي يبان اسم الملف -->
+  <div id="file-name" class="file-name"></div>
+</div>
+
+<input type="file" id="fileUpload" style="display:none" onchange="handleFile(event)">
+
+
+  <!-- الحقل لي غادي يفتح نافذة اختيار الملف -->
+  <input type="file" class="attach-input">
+</div>
+
+
+  <!-- input مخفي -->
+  <input type="file" id="fileUpload" style="display: none;">
+</div>
+
+
+  <button class="send-btn">Send request</button>
+</div>
+
+            <div class="cb-contact-terms">
+                This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('.cb-input_checkbox').forEach(box => {
+    const input = box.querySelector('input');
+
+    box.addEventListener('click', () => {
+        input.checked = !input.checked;
+
+        // Border animation
+        box.classList.add('active');
+        setTimeout(() => box.classList.remove('active'), 350);
+    });
+});
+</script>
+<Script>
+    const options = document.querySelectorAll(".price-option");
+
+options.forEach(option => {
+  option.addEventListener("click", () => {
+    document.querySelector(".price-option.active")?.classList.remove("active");
+    option.classList.add("active");
+  });
+});
+
+</Script>
+<script>
+function handleFile(event) {
+  const file = event.target.files[0];
+  const fileNameBox = document.getElementById('file-name');
+
+  if (!file) return;
+
+  // limit = 25MB
+  const maxSize = 25 * 1024 * 1024;
+
+  if (file.size > maxSize) {
+    fileNameBox.style.color = "#ff4d4d";
+    fileNameBox.textContent = "❌ Size limit exceeded (25MB)";
+    return;
+  }
+
+  // مزيان
+  fileNameBox.style.color = "#ffffff";
+  fileNameBox.textContent = "✔️ " + file.name;
+}
+</script>
+
+
+</head>
+</body>
