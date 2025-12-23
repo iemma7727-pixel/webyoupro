@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logopng.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Services Webyoupro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            opacity: 0.5;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: -20px -10px; /* نقصنا الارتفاع */
+            margin-top: 180px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero small {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 25px;
+        }
+
+        /* IMAGE STYLE */
+        .hero-img {
+            width: 85%;
+            margin: 90px auto;
+            display: block;
+            border-radius: 40px;
+        }
+
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+/* SOLUTIONS SECTION */
+.solutions {
+    width: 85%;
+    margin: 80px auto;
+}
+
+.solutions-title {
+    font-size: 42px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.solution-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+}
+
+.solution-item .left {
+    width: 30%;
+}
+
+.solution-item .left h3 {
+    font-size: 30px;
+}
+
+.solution-item .right {
+    width: 65%;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    .solution-item {
+        flex-direction: column;
+    }
+
+    .solution-item .left,
+    .solution-item .right {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+}
+.logo {
+  width: 130px;        /* قدّر الحجم اللي بغيتي */
+  height: auto;
+  object-fit: contain;
+  background: none;   /* مهم */
+  box-shadow: none;   /* مهم */
+  border-radius: 0;   /* باش مايتقصّش اللوغو */
+}
+footer {
+  padding-bottom: 0px !important;   /* نقص المسافة */
+  margin-bottom: 0 !important;       /* شيل المارجن لي تحت */
+}
+.wyp-footer {
+  background: #000000;
+  color: #fff;
+  padding: 50px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.wyp-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.wyp-logo {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.wyp-desc {
+  font-size: 15px;
+  color: #bbb;
+  max-width: 260px;
+  line-height: 1.6;
+}
+
+.wyp-right {
+  text-align: right;
+}
+
+.wyp-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.wyp-link:hover {
+  color: #C0584F;
+}
+
+.wyp-copy {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wyp-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .wyp-right {
+    text-align: center;
+  }
+}
+.wyp-logo {
+  width: 140px;      /* صغّر أو كبر حسب الحجم */
+  height: auto;
+}
+nav ul li a {
+    text-decoration: none;   /* تحييد الخط تحت الرابط */
+    color: inherit;          /* يرجع اللون الأصلي بلا ما يتبدل */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;            /* تأثير زوين فـ hover */
+}
+nav {
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav .logo {
+    width: 130px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    opacity: 0.5;
+}
+
+/* زر المنيو فالموبايل */
+.menu-btn {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/*       MOBILE          */
+/* ===================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 6%;
+    }
+
+    /* كنبينو زر المنيو */
+    .menu-btn {
+        display: block;
+        user-select: none;
+    }
+
+    /* كيختفي الـ UL فالوضع العادي */
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+        display: none;
+    }
+
+    /* ملي كيتفتح */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+.solution-item {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.service-details {
+  display: none;
+  margin-top: 15px;
+}
+
+.budget-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.budget-options button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+.budget-pill {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.budget-pill:hover {
+  background: #000;
+  color: #fff;
+}
+.wyp-footer {
+  background: #000;
+  color: #fff;
+  padding: 120px 8vw 20px; /* نقصنا المسافة لتحت */
+  position: relative;
+  z-index: 1;
+    padding-bottom: 16px;
+}
+
+.wyp-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.wyp-logo {
+  width: 140px;
+  margin-bottom: 24px;
+}
+
+.wyp-desc {
+  color: #aaa;
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+/* columns */
+.wyp-footer-col h4 {
+  font-size: 15px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.wyp-footer-col a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 14px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.wyp-footer-col a:hover {
+  color: #fff;
+}
+
+/* socials */
+.wyp-socials {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+}
+
+/* bottom */
+.wyp-footer-bottom {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .wyp-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+.video-cta {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.video-cta:hover .video-text {
+  opacity: 0.85;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+<nav>
+<a href="index.html">
+  <img src="pn1.png" alt="Logo" class="logo" />
+</a>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="nav-links" class="nav-center">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projet.html">Projects</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="kontakt.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <small>Our services</small>
+        <h1>Turning Vision <br> Into Impact </h1>
+    </section>
+
+    <!-- IMAGE -->
+<video class="hero-img" autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+</video>
+    <!-- SOLUTIONS SECTION (الكود لي عطيتيني ودمجتو ليك) -->
+    <section class="solutions">
+
+        <h2 class="solutions-title">Our Services</h2>
+
+        <!-- واحد الخدمة -->
+<div class="solution-item">
+  <div class="left">
+    <h3>Website Design</h3>
+  </div>
+  <div class="right">
+    <p>Modern, fast and responsive websites tailored to your business.</p>
+    <a class="btn" href="#" data-target="web-content">Read more</a>
+
+    <div class="service-details" id="web-content">
+      <p>Choose your website type:</p>
+      <div class="budget-options">
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Website%20Design%20service%20(Landing%20Page%20400%E2%80%93800%24).%20Could%20you%20please%20share%20more%20details%20about%20the%20process%2C%20timeline%2C%20and%20next%20steps%3F" target="_blank" class="budget-pill">
+          Landing Page (400$–800$)
+        </a>
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Website%20Design%20service%20(Business%20Website%20900%E2%80%932000%24).%20I%E2%80%99d%20like%20to%20know%20more%20about%20pricing%2C%20delivery%20time%2C%20and%20how%20we%20can%20get%20started." target="_blank" class="budget-pill">
+          Business Website (900$–2K$)
+        </a>
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Website%20Design%20service%20(E-commerce%203000%E2%80%934000%24).%20Please%20let%20me%20know%20more%20details%20about%20features%2C%20timeline%2C%20and%20the%20next%20steps%20to%20start%20the%20project." target="_blank" class="budget-pill">
+          E-commerce (3k–4k)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="solution-item">
+  <div class="left">
+    <h3>UX/UI Design</h3>
+  </div>
+  <div class="right">
+    <p>User-centered design focused on usability and experience.</p>
+    <a class="btn" href="#" data-target="ux-content">Read more</a>
+
+    <div class="service-details" id="ux-content">
+      <p>Choose your design package:</p>
+      <div class="budget-options">
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20UX%2FUI%20Design%20service%20for%20a%20Mobile%20App%202k.%20Could%20you%20please%20share%20more%20details%20about%20the%20process%2C%20timeline%2C%20and%20next%20steps%3F" target="_blank" class="budget-pill">
+          Mobile App (2k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20UX%2FUI%20Design%20service%20for%20a%20Web%20App%204k.%20I%E2%80%99d%20like%20to%20know%20more%20about%20pricing%2C%20delivery%20time%2C%20and%20how%20we%20can%20get%20started." target="_blank" class="budget-pill">
+          Web App (4k)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="solution-item">
+  <div class="left">
+    <h3>Product Design</h3>
+  </div>
+  <div class="right">
+    <p>From idea to production-ready product design.</p>
+    <a class="btn" href="#" data-target="product-content">Read more</a>
+
+    <div class="service-details" id="product-content">
+      <div class="budget-options">
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Product%20Design%20service%20(Basic%20400%E2%80%93800%24).%20Could%20you%20please%20share%20more%20details%20about%20the%20process%2C%20timeline%2C%20and%20next%20steps%3F" target="_blank" class="budget-pill">
+          Basic (400$–800$)
+        </a>
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Product%20Design%20service%20(Standard%20900%E2%80%931000%24).%20I%E2%80%99d%20like%20to%20know%20more%20about%20pricing%2C%20delivery%20time%2C%20and%20how%20we%20can%20get%20started." target="_blank" class="budget-pill">
+          Standard (900$–1k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Product%20Design%20service%20(Premium%202000%E2%80%932000%24).%20Please%20let%20me%20know%20more%20details%20about%20features%2C%20timeline%2C%20and%20the%20next%20steps%20to%20start%20the%20project." target="_blank" class="budget-pill">
+          Premium (2k)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="solution-item">
+  <div class="left">
+    <h3>Motion Graphics</h3>
+  </div>
+  <div class="right">
+    <p>Animations that tell your story visually.</p>
+    <a class="btn" href="#" data-target="motion-content">Read more</a>
+
+    <div class="service-details" id="motion-content">
+      <div class="budget-options">
+        <a href="https://wa.me/212785443932?text=Short%20Animation%201k%E2%80%932k.%20Interested." target="_blank" class="budget-pill">
+          Short Animation (1k–2k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Explainer%20Video%203k%E2%80%934k.%20Interested." target="_blank" class="budget-pill">
+          Explainer Video (3k–4k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Full%20Production%205k%E2%80%936k.%20Interested." target="_blank" class="budget-pill">
+          Full Production (5k–6k)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="solution-item">
+  <div class="left">
+    <h3>Brand Identity</h3>
+  </div>
+  <div class="right">
+    <p>Build a strong and recognizable brand.</p>
+    <a class="btn" href="#" data-target="brand-content">Read more</a>
+
+    <div class="service-details" id="brand-content">
+      <div class="budget-options">
+        <a href="https://wa.me/212785443932?text=Logo%20%26%20Colors%20400%E2%80%93800%24.%20Interested." target="_blank" class="budget-pill">
+          Logo & Colors (400$–800$)
+        </a>
+        <a href="https://wa.me/212785443932?text=Full%20Identity%20900%E2%80%931000%24.%20Interested." target="_blank" class="budget-pill">
+          Full Identity (900$–1k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Premium%20Branding%202000%E2%80%933000%24.%20Interested." target="_blank" class="budget-pill">
+          Premium Branding (2k–3k)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="solution-item">
+  <div class="left">
+    <h3>Mobile Development</h3>
+  </div>
+  <div class="right">
+    <p>High-performance mobile applications.</p>
+    <a class="btn" href="#" data-target="mobile-content">Read more</a>
+
+    <div class="service-details" id="mobile-content">
+      <div class="budget-options">
+        <a href="https://wa.me/212785443932?text=Simple%20App%202k%E2%80%933k.%20Interested." target="_blank" class="budget-pill">
+          Simple App (2k–3k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Standard%20App%204k%E2%80%935k.%20Interested." target="_blank" class="budget-pill">
+          Standard App (4k–5k)
+        </a>
+        <a href="https://wa.me/212785443932?text=Complex%20App%206k%E2%80%937k.%20Interested." target="_blank" class="budget-pill">
+          Complex App (6k–7k)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="wyp-footer">
+  <div class="wyp-container">
+
+    <!-- LEFT -->
+    <div class="wyp-footer-brand">
+      <a href="index.html">
+        <img src="pn1.png" alt="WebYouPro Logo" class="wyp-logo">
+      </a>
+
+      <p class="wyp-desc">
+        We build clean, modern & high-performance websites that help brands grow online.
+      </p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="wyp-footer-col">
+      <h4>Services</h4>
+
+      <a href="services.html#website-design">Website Design</a>
+      <a href="services.html#ux-ui-design">UX/UI Design</a>
+      <a href="services.html#product-design">Product Design</a>
+      <a href="services.html#motion-graphics">Motion Graphics</a>
+      <a href="services.html#brand-identity">Brand Identity</a>
+      <a href="services.html#mobile-development">Mobile Development</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="wyp-footer-col">
+      <h4>Contact</h4>
+
+      <a href="mailto:contact@webyoupro.com">contact@webyoupro.com</a>
+      <a href="mailto:info@webyoupro.com">info@webyoupro.com</a>
+
+      <div class="wyp-socials">
+
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wyp-footer-bottom">
+    © 2025 WebYouPro. All rights reserved.
+  </div>
+</footer>
+
+    </section>
+<video crossorigin="anonymous" autoplay="" playsinline="" loop="" muted=""><source src="/assets/footer/ropes.mp4" media="(min-width:768px)"><source src="/assets/footer/ropes-sm.mp4?2"></video>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
+<script>
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+
+    // سدّ جميع التفاصيل
+    document.querySelectorAll('.service-details').forEach(el => {
+      if (el !== target) el.style.display = 'none';
+    });
+
+    // فتح / إغلاق الحالية
+    target.style.display =
+      target.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
+
+</body>
+</html>

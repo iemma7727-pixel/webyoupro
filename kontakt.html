@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logopng.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Contact Webyoupro</title>
+<style>
+    /* ---- Base ---- */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #0e0e0e;
+    color: white;
+}
+.cb-contact-terms {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 22px;
+}
+.cb-contact-terms a {
+    color: #fff;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+
+
+        /* HERO SECTION */
+        .hero {
+            padding: -20px -30px; /* نقصنا الارتفاع */
+            margin-top: 180px;
+            width: 100%;
+            text-align: center;
+            margin-top: 100px;
+
+        }
+
+        .hero small {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 25px;
+
+        }
+nav ul li a {
+    text-decoration: none !important;
+    color: inherit;
+}
+nav ul li a {
+    text-decoration: none;   /* تحييد الخط تحت الرابط */
+    color: inherit;          /* يرجع اللون الأصلي بلا ما يتبدل */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;            /* تأثير زوين فـ hover */
+}
+nav {
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav .logo {
+    width: 130px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    opacity: 0.5;
+}
+
+/* زر المنيو فالموبايل */
+.menu-btn {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/*       MOBILE          */
+/* ===================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 6%;
+    }
+
+    /* كنبينو زر المنيو */
+    .menu-btn {
+        display: block;
+        user-select: none;
+    }
+
+    /* كيختفي الـ UL فالوضع العادي */
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+        display: none;
+    }
+
+    /* ملي كيتفتح */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services-container {
+  margin-top: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.services-title {
+  width: 100%;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-left: 80px; /* بدّل الرقم اللي بغيتي */
+
+}
+.services-wrapper {
+  width: 100%;
+  max-width: 1100px;   /* ضروري باش العناصر يبقاو فـ 3 أعمدة */
+  margin: 0 auto;      /* وسط الصفحة */
+  
+
+}
+
+.service-pill {
+  position: relative;
+  cursor: pointer;
+  padding: 12px 18px;
+  border: 1px solid #fff; /* نفس لون الصورة */
+  border-radius: 999px;
+  font-size: 24px;
+  font-weight: 100;
+  transition: all 0.25s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 6px; /* حطيت غير شوية مسافة متوازنة */
+}
+
+
+.service-pill:hover {
+  transform: translateY(-2px);
+}
+
+.service-pill input {
+  display: none;
+}
+
+.service-pill span {
+  transition: color 0.3s ease;
+}
+
+/* -------- ACTIVE STATE (ملي كتختار) -------- */
+.service-pill input:checked + span {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+.contact-section {
+  padding: 30px 8%;
+  background: #000000; /* نفس الخلفية لي فالصورة */
+  margin-left: -50px;
+}
+
+.contact-form {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+/* TITLE LABEL */
+.form-label {
+  font-size: 25px;
+  color: #9d9d9d;
+  font-weight: 400;
+}
+
+/* INPUT STYLE */
+.form-input {
+  background: transparent !important;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #d6d6d6;
+  padding: 14px 0;
+  outline: none;
+  transition: .25s ease;
+  color: #ffffff;
+}
+
+/* Focus effect */
+.form-input:focus {
+  border-bottom-color: #ffffff;
+}
+
+/* TEXTAREA */
+.textarea {
+  height: 60px;       /* كانت 150px — نقصناها باش يطلع الخط */
+  resize: none;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+/* Attachment block */
+.attachment-block {
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.attach-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 20px;   /* بدل 20px بالقيمة لي بغيتي */
+}
+
+.attach-icon {
+  font-size: 28px;
+}
+
+.attach-text {
+  font-size: 28px;
+}
+
+.attach-line {
+  width: 250px;
+  height: 0.5px;          /* خط رقيق بزاف */
+  background: rgba(255, 255, 255, 0.4); /* أبيض خفيف */
+  margin-top: 4px;        /* المسافة بين النص والخط */
+  margin-left: 25px;   /* بدل 20px بالقيمة لي بغيتي */
+}
+
+
+.attach-input {
+  display: none;      /* كنخبيه ونجعل block كامل كليكابل */
+}
+
+/* باش كامل block يصبح كليكابل */
+.attachment-block:hover .attach-text {
+  opacity: 0.8;
+}
+
+
+
+/* Send button */
+.send-btn {
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  background: #000000;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #ffffff;        /* ← الكتابة بالبيض */
+  margin-top: 40px;      /* ← باش تهبط الحبة لتحت */
+  margin-left: 70px;   /* بدل 20px بالقيمة لي بغيتي */
+}
+
+.send-btn:hover {
+  background: #ffffff;
+  color: #000000;        /* ← ملي كيدوز الماوس تولي الكتابة كحلة */
+}
+
+
+
+.wyp-logo {
+  width: 140px;      /* صغّر أو كبر حسب الحجم */
+  height: auto;
+}
+nav ul li a {
+    text-decoration: none;   /* تحييد الخط تحت الرابط */
+    color: inherit;          /* يرجع اللون الأصلي بلا ما يتبدل */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;            /* تأثير زوين فـ hover */
+}
+nav {
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav .logo {
+    width: 130px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    opacity: 0.5;
+}
+
+/* زر المنيو فالموبايل */
+.menu-btn {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/*       MOBILE          */
+/* ===================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 6%;
+    }
+
+    /* كنبينو زر المنيو */
+    .menu-btn {
+        display: block;
+        user-select: none;
+    }
+
+    /* كيختفي الـ UL فالوضع العادي */
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+        display: none;
+    }
+
+    /* ملي كيتفتح */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+.solution-item {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+}
+/* ===============================
+   RESPONSIVE – MOBILE
+================================ */
+@media (max-width: 768px) {
+
+  .contact-section {
+    padding: 20px 16px;
+    margin-left: 0; /* نحيدو الإزاحة */
+  }
+
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto 0; /* غير 40px من الفوق */
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+  .form-label {
+    font-size: 18px; /* كان 25px */
+    margin-bottom: 4px;
+  }
+
+  .form-input {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .textarea {
+    height: 80px; /* قصيرة ومناسبة للهاتف */
+  }
+
+}
+@media (max-width: 768px) {
+  .form-label:last-of-type {
+    margin-top: 20px;
+    font-weight: 500;
+  }
+}
+/* SERVICES */
+.services-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:50px;
+}
+
+.service-pill{
+  padding:14px 28px;
+  border-radius:999px;
+  border:1px solid #fff;
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.service-pill.active{
+  background:#fff;
+  color:#000;
+}
+
+/* DETAILS */
+.service-details{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:.4s ease;
+}
+
+.service-details.active{
+  max-height:500px;
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+
+/* ===== SERVICES PILLS ===== */
+.services-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:60px;
+}
+
+.service-pill{
+  padding:14px 28px;
+  border-radius:999px;
+  border:1px solid #333;
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.service-pill:hover{
+  border-color:#fff;
+}
+
+.service-pill.active{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+/* ===== SERVICE DETAILS ===== */
+.service-details{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .45s ease;
+  margin-bottom:30px;
+}
+
+.service-details.active{
+  max-height:600px;
+  opacity:1;
+  transform:translateY(0);
+}
+
+.service-details p{
+  margin-bottom:16px;
+  color:#ccc;
+}
+
+/* ===== BUDGET PILLS ===== */
+.budget-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.budget-pill{
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid #444;
+  color:#fff;
+  text-decoration:none;
+  transition:.25s ease;
+}
+
+.budget-pill:hover{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+/* WRAPPER */
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* SERVICES */
+.services-title {
+  font-size: 22px;
+  color: #9b9b9b;
+  margin-bottom: 20px;
+}
+.services-container {
+  margin-top: 80px;   /* بدل 130px */
+}
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.service-pill {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.service-pill:hover {
+  transform: translateY(-2px);
+}
+
+.service-pill.active {
+  background: #fff;
+  color: #000;
+}
+
+/* DETAILS */
+.service-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  margin-bottom: 30px;
+}
+
+.service-details.active {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.budget-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.budget-pill {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid #444;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.budget-pill:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* FORM */
+.contact-section {
+  padding: 30px 8%;
+  background: #000000;
+  margin-left: 0;
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-label {
+  font-size: 18px;
+  color: #9d9d9d;
+  font-weight: 400;
+  margin-bottom: 8px;   /* مسافة صغيرة */
+}
+
+
+.form-input {
+  background: transparent;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #d6d6d6;
+  padding: 0px 0 6px;  /* نقصنا padding */
+  outline: none;
+  color: #ffffff;
+}
+
+
+.form-input:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+
+.textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+.send-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .service-pill {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+}
+.wyp-footer {
+  background: #000;
+  color: #fff;
+  padding: 120px 8vw 20px; /* نقصنا المسافة لتحت */
+  position: relative;
+  z-index: 1;
+    padding-bottom: 16px;
+}
+
+.wyp-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.wyp-logo {
+  width: 140px;
+  margin-bottom: 24px;
+}
+
+.wyp-desc {
+  color: #aaa;
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+/* columns */
+.wyp-footer-col h4 {
+  font-size: 15px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.wyp-footer-col a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 14px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.wyp-footer-col a:hover {
+  color: #fff;
+}
+
+/* socials */
+.wyp-socials {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+}
+
+/* bottom */
+.wyp-footer-bottom {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .wyp-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+</style>
+<head>
+<body>
+      <!-- NAVBAR -->
+<nav>
+<a href="index.html">
+  <img src="pn1.png" alt="Logo" class="logo" />
+</a>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="nav-links" class="nav-center">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projet.html">Projects</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="kontakt.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Hey! Tell us all<br> the things </h1>
+    </section>
+
+<!-- Services -->
+
+<!-- Services Section -->
+<div class="services-container">
+  <p class="services-title">I'm interested in...</p>
+
+<div class="contact-wrapper">
+
+  <!-- SERVICES -->
+
+  <div class="services-wrapper">
+    <button class="service-pill" data-target="web-content">Website Design</button>
+    <button class="service-pill" data-target="ux-content">UX/UI Design</button>
+    <button class="service-pill" data-target="product-content">Product Design</button>
+    <button class="service-pill" data-target="motion-content">Motion Graphics</button>
+    <button class="service-pill" data-target="brand-content">Brand Identity</button>
+    <button class="service-pill" data-target="mobile-content">Mobile Development</button>
+  </div>
+
+  <!-- DETAILS -->
+  <div class="service-details" id="web-content">
+    <p>Choose your website type:</p>
+    <div class="budget-options">
+      <a class="budget-pill" href="#">Landing Page (400$–800$)</a>
+      <a class="budget-pill" href="#">Business Website (900$–2k$)</a>
+      <a class="budget-pill" href="#">E-commerce (3k–4k$)</a>
+    </div>
+  </div>
+
+  <div class="service-details" id="ux-content">
+    <p>Choose your UX/UI package:</p>
+    <div class="budget-options">
+      <a class="budget-pill" href="#">Mobile App (2k$)</a>
+      <a class="budget-pill" href="#">Web App (4k$)</a>
+    </div>
+  </div>
+
+  <div class="service-details" id="product-content">
+    <p>Choose your product design package:</p>
+    <div class="budget-options">
+      <a class="budget-pill" href="#">Basic (400$–800$)</a>
+      <a class="budget-pill" href="#">Standard (900$–1k$)</a>
+      <a class="budget-pill" href="#">Premium (2k$)</a>
+    </div>
+  </div>
+
+  <div class="service-details" id="motion-content">
+    <p>Choose your motion package:</p>
+    <div class="budget-options">
+      <a class="budget-pill" href="#">Short Animation (1k–2k)</a>
+      <a class="budget-pill" href="#">Explainer Video (3k–4k)</a>
+      <a class="budget-pill" href="#">Full Production (5k–6k)</a>
+    </div>
+  </div>
+
+  <div class="service-details" id="brand-content">
+    <p>Choose your branding package:</p>
+    <div class="budget-options">
+      <a class="budget-pill" href="#">Logo & Colors (400$–800$)</a>
+      <a class="budget-pill" href="#">Full Identity (900$–1k$)</a>
+      <a class="budget-pill" href="#">Premium Branding (2k–3k)</a>
+    </div>
+  </div>
+
+  <div class="service-details" id="mobile-content">
+    <p>Choose your mobile app package:</p>
+    <div class="budget-options">
+      <a class="budget-pill" href="#">Simple App (2k–3k)</a>
+      <a class="budget-pill" href="#">Standard App (4k–5k)</a>
+      <a class="budget-pill" href="#">Complex App (6k–7k)</a>
+    </div>
+  </div>
+
+  <!-- FORM -->
+<section class="contact-section">
+  <form class="contact-form">
+
+    <label class="form-label">Your name</label>
+    <input type="text" class="form-input" id="userName">
+
+    <label class="form-label">Email</label>
+    <input type="email" class="form-input" id="userEmail">
+
+    <label class="form-label">Tell us about your project</label>
+    <textarea class="form-input textarea" id="userProject"></textarea>
+
+  </form>
+</section>
+
+
+</div>
+
+<div class="attachment-block" onclick="document.getElementById('fileUpload').click();">
+  <div class="attach-left">
+    <span class="attach-icon">📎</span>
+    <span class="attach-text">Add attachment</span>
+  </div>
+
+  <div class="attach-line"></div>
+
+  <!-- هنا غادي يبان اسم الملف -->
+  <div id="file-name" class="file-name"></div>
+</div>
+
+<input type="file" id="fileUpload" style="display:none" onchange="handleFile(event)">
+
+
+  <!-- الحقل لي غادي يفتح نافذة اختيار الملف -->
+  <input type="file" class="attach-input">
+</div>
+
+
+  <!-- input مخفي -->
+  <input type="file" id="fileUpload" style="display: none;">
+</div>
+
+
+<button type="button" class="send-btn" id="sendWhatsapp">
+  Send request
+</button>
+</div>
+
+
+
+        </form>
+    </div>
+</section>
+<footer class="wyp-footer">
+  <div class="wyp-container">
+
+    <!-- LEFT -->
+    <div class="wyp-footer-brand">
+      <a href="index.html">
+        <img src="pn1.png" alt="WebYouPro Logo" class="wyp-logo">
+      </a>
+
+      <p class="wyp-desc">
+        We build clean, modern & high-performance websites that help brands grow online.
+      </p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="wyp-footer-col">
+      <h4>Services</h4>
+
+      <a href="services.html#website-design">Website Design</a>
+      <a href="services.html#ux-ui-design">UX/UI Design</a>
+      <a href="services.html#product-design">Product Design</a>
+      <a href="services.html#motion-graphics">Motion Graphics</a>
+      <a href="services.html#brand-identity">Brand Identity</a>
+      <a href="services.html#mobile-development">Mobile Development</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="wyp-footer-col">
+      <h4>Contact</h4>
+
+      <a href="mailto:contact@webyoupro.com">contact@webyoupro.com</a>
+      <a href="mailto:info@webyoupro.com">info@webyoupro.com</a>
+
+      <div class="wyp-socials">
+
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wyp-footer-bottom">
+    © 2025 WebYouPro. All rights reserved.
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.cb-input_checkbox').forEach(box => {
+    const input = box.querySelector('input');
+
+    box.addEventListener('click', () => {
+        input.checked = !input.checked;
+
+        // Border animation
+        box.classList.add('active');
+        setTimeout(() => box.classList.remove('active'), 350);
+    });
+});
+</script>
+<Script>
+    const options = document.querySelectorAll(".price-option");
+
+options.forEach(option => {
+  option.addEventListener("click", () => {
+    document.querySelector(".price-option.active")?.classList.remove("active");
+    option.classList.add("active");
+  });
+});
+
+</Script>
+<script>
+function handleFile(event) {
+  const file = event.target.files[0];
+  const fileNameBox = document.getElementById('file-name');
+
+  if (!file) return;
+
+  // limit = 25MB
+  const maxSize = 25 * 1024 * 1024;
+
+  if (file.size > maxSize) {
+    fileNameBox.style.color = "#ff4d4d";
+    fileNameBox.textContent = "❌ Size limit exceeded (25MB)";
+    return;
+  }
+
+  // مزيان
+  fileNameBox.style.color = "#ffffff";
+  fileNameBox.textContent = "✔️ " + file.name;
+}
+</script>
+<script>document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+});
+</script>
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
+<script>
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+
+    // سدّ جميع التفاصيل
+    document.querySelectorAll('.service-details').forEach(el => {
+      if (el !== target) el.style.display = 'none';
+    });
+
+    // فتح / إغلاق الحالية
+    target.style.display =
+      target.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
+<script>
+document.querySelectorAll('.service-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const targetId = pill.dataset.target;
+    const target = document.getElementById(targetId);
+
+    document.querySelectorAll('.service-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.service-details').forEach(d => d.classList.remove('active'));
+
+    pill.classList.add('active');
+    if (target) target.classList.add('active');
+  });
+});
+</script>
+<script>
+document.getElementById("sendWhatsapp").addEventListener("click", function () {
+
+  const name = document.getElementById("userName").value.trim();
+  const email = document.getElementById("userEmail").value.trim();
+  const project = document.getElementById("userProject").value.trim();
+
+  const phone = "212785443932"; // رقم واتساب ديالك
+
+  const message = `
+Hello 👋
+
+Name: ${name || "—"}
+Email: ${email || "—"}
+
+Project:
+${project || "—"}
+  `;
+
+  const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
+
+</head>
+</body>
