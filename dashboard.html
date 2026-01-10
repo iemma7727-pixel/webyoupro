@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Premium Client Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ===== LAYOUT ===== */
+.app{
+  display:flex;
+  min-height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:90px;
+  background:#fff;
+  border-right:1px solid #e5e7eb;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px 0;
+  gap:18px;
+}
+
+.sidebar a{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f3f4f6;
+  color:#111;
+  transition:.25s ease;
+  cursor:pointer;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+  background:#111;
+  color:#fff;
+  transform:scale(1.07);
+}
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  padding:30px 40px;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.top-left button{
+  border:none;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#f3f4f6;
+  margin-right:10px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.top-left button.active,
+.top-left button:hover{
+  background:#111;
+  color:#fff;
+}
+
+.top-right button{
+  border:none;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#f3f4f6;
+  margin-left:8px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.top-right button.primary{
+  background:#2563eb;
+  color:#fff;
+}
+
+/* ===== TITLE ===== */
+.header h1{
+  font-size:28px;
+  font-weight:600;
+  margin-bottom:25px;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:2.2fr 1.2fr 1.2fr 1fr;
+  gap:22px;
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:#fff;
+  border-radius:28px;
+  padding:24px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+  transition:.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 30px 60px rgba(0,0,0,.1);
+}
+
+/* ===== PREVIEW ===== */
+.preview{
+  grid-row:span 2;
+  background:linear-gradient(135deg,#d16b5f,#b9483e);
+  border-radius:32px;
+  position:relative;
+  overflow:hidden;
+}
+
+.preview::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.4),transparent);
+}
+
+.preview span{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  color:#fff;
+  font-weight:600;
+}
+
+/* ===== SERVICE ===== */
+.service h4{
+  color:#ef4444;
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.service h2{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.meta{
+  display:flex;
+  justify-content:space-between;
+}
+
+.meta span{
+  font-size:13px;
+  color:#6b7280;
+}
+
+.meta strong{
+  display:block;
+  font-size:18px;
+}
+
+/* ===== SELECTED ===== */
+.selected h3{
+  color:#ef4444;
+  margin-bottom:14px;
+}
+
+.selected label{
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.selected input{
+  margin-right:10px;
+  accent-color:#111;
+}
+
+.status{
+  margin-top:14px;
+  background:rgba(34,197,94,.15);
+  color:#15803d;
+  padding:6px 14px;
+  border-radius:999px;
+  width:max-content;
+  font-weight:500;
+}
+
+/* ===== TOTAL ===== */
+.total{
+  background:#2596d6;
+  color:#fff;
+  text-align:center;
+}
+
+.total h3{
+  font-weight:500;
+}
+
+.total .price{
+  font-size:42px;
+  font-weight:700;
+  margin:18px 0;
+}
+
+.total button{
+  border:none;
+  padding:12px 22px;
+  border-radius:999px;
+  background:#fff;
+  color:#2596d6;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.total small{
+  display:block;
+  margin-top:10px;
+  opacity:.8;
+}
+
+/* ===== TABLE ===== */
+.table{
+  grid-column:span 2;
+}
+
+.table table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.table th,
+.table td{
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
+  text-align:left;
+}
+
+/* ===== FEEDBACK ===== */
+.feedback textarea{
+  width:100%;
+  height:120px;
+  border-radius:20px;
+  border:1px solid #e5e7eb;
+  padding:14px;
+  resize:none;
+}
+.payment-card{
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:#fff;
+  text-align:center;
+}
+
+.payment-card h3{
+  font-weight:500;
+}
+
+.payment-card .price{
+  font-size:44px;
+  font-weight:700;
+  margin:20px 0;
+}
+
+.payment-card button{
+  border:none;
+  background:#fff;
+  color:#1e40af;
+  font-weight:600;
+  padding:14px 26px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.payment-card button:hover{
+  transform:scale(1.05);
+}
+
+.payment-card small{
+  display:block;
+  margin-top:14px;
+  opacity:.85;
+}
+.video-preview{
+  position:relative;
+  overflow:hidden;
+}
+
+.video-preview video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:32px;
+}
+
+.video-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.45), transparent);
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+}
+
+.video-overlay span{
+  color:#fff;
+  font-weight:600;
+  font-size:15px;
+}
+.files-popover{
+  position:fixed;
+  left:100px;
+  top:120px;
+  width:260px;
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  display:none;
+  z-index:999;
+}
+
+.files-popover h4{
+  font-size:15px;
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.files-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.file-item{
+  padding:10px 12px;
+  border-radius:12px;
+  background:#f3f4f6;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.no-files{
+  font-size:13px;
+  color:#6b7280;
+  text-align:center;
+  padding:20px 0;
+}
+.message-popover {
+  position: fixed;
+  left: 80px;
+  top: 200px;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  display: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.message-popover h4 {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+
+  /* ===== APP ===== */
+  .app {
+    flex-direction: column;
+  }
+
+  /* ===== SIDEBAR -> BOTTOM BAR ===== */
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+
+    width: 100%;
+    height: 64px;
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #fff;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+    z-index: 1000;
+  }
+
+  .sidebar a {
+    margin: 0;
+  }
+
+  /* ===== MAIN ===== */
+  .main {
+    margin-left: 0;
+    padding-bottom: 90px; /* باش ما يتغطاش بالمينيو */
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .top-left,
+  .top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ===== HEADER ===== */
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .header h2 {
+    font-size: 16px;
+  }
+
+  /* ===== GRID ===== */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* ===== VIDEO PREVIEW ===== */
+  .video-preview {
+    height: 220px;
+  }
+
+  .video-preview video {
+    object-fit: cover;
+  }
+
+  /* ===== CARDS ===== */
+  .card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  /* ===== TOTAL ===== */
+  .total .price {
+    font-size: 28px;
+  }
+
+  /* ===== POPOVERS ===== */
+  .files-popover,
+  .message-popover {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 2000;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Preview */
+  .video-preview {
+    order: 1;
+  }
+
+  /* Service card */
+  .card.service {
+    order: 2;
+  }
+
+  /* Service Selected */
+  .card.selected {
+    order: 3;
+  }
+
+  /* Total (PayPal) */
+  .card.total {
+    order: 4;
+    margin-top: 10px;
+  }
+
+  /* Project Overview */
+  .card.table {
+    order: 5;
+  }
+
+  /* Feedback */
+  .card.feedback {
+    order: 6;
+  }
+
+}
+.feedback form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.feedback input[type="file"]{
+  border:1px dashed #e5e7eb;
+  padding:10px;
+  border-radius:14px;
+  background:#f9fafb;
+}
+
+.send-btn{
+  border:none;
+  background:#111;
+  color:#fff;
+  padding:12px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+#feedbackStatus{
+  font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+<a class="active" id="dashboardBtn">
+  <i data-lucide="home"></i>
+</a>
+<a id="folderBtn"><i data-lucide="folder"></i></a>
+<a id="messageBtn"><i data-lucide="message-circle"></i></a>
+    <a id="logoutBtn"><i data-lucide="log-out"></i></a>
+  </aside>
+<div class="files-popover" id="filesPopover">
+  <h4>Your Files</h4>
+  <div class="files-list" id="filesList"></div>
+</div>
+<div class="message-popover" id="messagePopover">
+  <h4>Service Status</h4>
+  <p id="messageContent"></p>
+</div>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-left">
+        <button class="active">Dashboard</button>
+        <button>Payments</button>
+        <button>Reports</button>
+      </div>
+      <div class="top-right">
+        <button id="headerDuration">—</button>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1 id="clientName">Welcome</h1>
+      <h2 id="serviceName"></h2>
+      <span id="servicePrice"></span> 
+      <span id="serviceDuration"></span>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid">
+
+      <!-- PREVIEW -->
+      <div class="preview video-preview">
+        <video autoplay muted loop playsinline>
+          <source src="ana.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+          <span>Project Preview</span>
+        </div>
+      </div>
+
+      <!-- SERVICE CARD -->
+      <div class="card service">
+        <h4>Service</h4>
+        <h2 id="cardServiceName"></h2>
+        <div class="meta">
+          <div><span>Price</span><strong id="cardPrice"></strong></div>
+          <div><span>Duration</span><strong id="cardDays"></strong></div>
+        </div>
+      </div>
+
+      <!-- OPTIONS -->
+      <div class="card selected">
+        <h3>Build Your Service</h3>
+        <div id="serviceSelected"></div>
+        <div class="status" id="paymentStatus">🟡 Pending Payment</div>
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="card total">
+        <h3>Total</h3>
+        <div class="price" id="totalPrice">€0</div>
+        <button id="payNowBtn">Pay with PayPal</button>
+        <small>Secure payment via PayPal</small>
+      </div>
+
+<div class="card table">
+  <h3>Project Overview</h3>
+  <table>
+    <tr><th>Step</th><th>Status</th></tr>
+    <tr>
+      <td>Service Selected</td>
+      <td id="serviceStep">Completed</td>
+    </tr>
+    <tr>
+      <td>Payment</td>
+      <td id="paymentStep">Pending</td>
+    </tr>
+    <tr>
+      <td>Project Start</td>
+      <td id="projectStep">Waiting</td>
+    </tr>
+    <tr>
+      <td>Delivery Date</td>
+      <td id="deliveryDate">—</td>
+    </tr>
+  </table>
+</div>
+
+      <!-- FEEDBACK -->
+<div class="card feedback">
+  <h3>Feedback</h3>
+
+  <form id="feedbackForm">
+    <textarea
+      name="message"
+      placeholder="Write your feedback..."
+      required
+    ></textarea>
+
+    <input
+      type="file"
+      name="attachment"
+      multiple
+    />
+
+    <button type="submit" class="send-btn">
+      Send Feedback
+    </button>
+
+    <p id="feedbackStatus"></p>
+  </form>
+</div>
+
+
+
+<!-- ICON INIT -->
+<script>
+const PAYPAL_USERNAME = "Salhi321";
+
+/* =====================
+   INIT
+===================== */
+document.addEventListener("DOMContentLoaded", () => {
+
+  if (typeof lucide !== "undefined") lucide.createIcons();
+
+  if (localStorage.getItem("client_logged") !== "true") {
+    window.location.href = "auth.html";
+    return;
+  }
+
+  const service = JSON.parse(localStorage.getItem("selected_service"));
+  if (!service) return;
+
+  const username = localStorage.getItem("client_name") || "Client";
+
+  let totalPrice = service.basePrice || service.price || 0;
+  let totalDays  = service.baseDays  || service.duration || 0;
+  service.options = service.options || [];
+
+  /* =====================
+     HEADER
+  ===================== */
+  document.getElementById("clientName").innerText = `Welcome, ${username}`;
+  document.getElementById("serviceName").innerText = service.name;
+  document.getElementById("cardServiceName").innerText = service.name;
+
+  /* =====================
+     UPDATE UI
+  ===================== */
+  function updateUI() {
+    document.getElementById("totalPrice").innerText = `€${totalPrice}`;
+    document.getElementById("servicePrice").innerText = `€${totalPrice}`;
+    document.getElementById("serviceDuration").innerText = `${totalDays} Days`;
+    document.getElementById("headerDuration").innerText = `${totalDays} Days`;
+    document.getElementById("cardPrice").innerText = `€${totalPrice}`;
+    document.getElementById("cardDays").innerText = `${totalDays} Days`;
+
+    localStorage.setItem("selected_service", JSON.stringify({
+      ...service,
+      totalPrice,
+      totalDays,
+      options: service.options
+    }));
+  }
+
+  updateUI();
+
+  /* =====================
+     OPTIONS
+  ===================== */
+  const OPTIONS = {
+    "Landing Page": [
+      { name: "Call To Action", price: 75, days: 2 },
+      { name: "Contact Form", price: 95, days: 2 },
+      { name: "Basic SEO", price: 120, days: 3 }
+    ],
+    "Business Website": [
+      { name: "Responsive Design", price: 150, days: 2 },
+      { name: "Pages Setup", price: 250, days: 3 },
+      { name: "Contact Form", price: 120, days: 1 }
+    ]
+  };
+
+  const optionsBox = document.getElementById("options-list");
+  const serviceOptions = OPTIONS[service.name] || [];
+
+  serviceOptions.forEach(opt => {
+    const label = document.createElement("label");
+    label.className = "option-item";
+    label.innerHTML = `
+      <input type="checkbox">
+      ${opt.name} (+€${opt.price} / ${opt.days} Days)
+    `;
+
+    label.querySelector("input").addEventListener("change", e => {
+      if (e.target.checked) {
+        service.options.push(opt);
+        totalPrice += opt.price;
+        totalDays += opt.days;
+      } else {
+        service.options = service.options.filter(o => o.name !== opt.name);
+        totalPrice -= opt.price;
+        totalDays -= opt.days;
+      }
+      updateUI();
+    });
+
+    optionsBox.appendChild(label);
+  });
+
+  /* =====================
+     PAYPAL
+  ===================== */
+  document.getElementById("payNowBtn").addEventListener("click", () => {
+    if (totalPrice <= 0) {
+      alert("Please select a service first");
+      return;
+    }
+
+    localStorage.setItem("payment_status", "paid");
+    document.getElementById("paymentStatus").innerText = "🟢 Paid";
+    document.getElementById("paymentStep").innerText = "Completed";
+
+    window.location.href =
+      `https://www.paypal.me/${PAYPAL_USERNAME}/${totalPrice}`;
+  });
+
+  /* =====================
+     LOGOUT
+  ===================== */
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.clear();
+    window.location.href = "auth.html";
+  });
+
+});
+</script>
+
+<script>document.querySelector(".header h2").style.display = "none";
+document.getElementById("servicePrice").style.display = "none";
+document.getElementById("serviceDuration").style.display = "none";
+
+</script>
+<script>const folderBtn = document.getElementById("folderBtn");
+const filesPopover = document.getElementById("filesPopover");
+const filesList = document.getElementById("filesList");
+
+folderBtn.addEventListener("click", () => {
+
+  filesPopover.style.display =
+    filesPopover.style.display === "block" ? "none" : "block";
+
+  filesList.innerHTML = "";
+
+  const files = JSON.parse(localStorage.getItem("uploaded_files")) || [];
+
+  if (files.length === 0) {
+    filesList.innerHTML = `<div class="no-files">No files uploaded yet</div>`;
+    return;
+  }
+
+  files.forEach(file => {
+    const div = document.createElement("div");
+    div.className = "file-item";
+    div.innerHTML = `<strong>${file.name}</strong><span>${file.size}</span>`;
+    filesList.appendChild(div);
+  });
+});
+</script>
+<script>document.addEventListener("click", e => {
+  if (!filesPopover.contains(e.target) && !folderBtn.contains(e.target)) {
+    filesPopover.style.display = "none";
+  }
+});
+</script>
+<script>const dashboardBtn = document.getElementById("dashboardBtn");
+
+dashboardBtn.addEventListener("click", () => {
+  // تحيد active من الجميع
+  document.querySelectorAll(".sidebar a").forEach(a =>
+    a.classList.remove("active")
+  );
+
+  // تفعل Dashboard
+  dashboardBtn.classList.add("active");
+
+  // تسد أي popover محلول
+  const filesPopover = document.getElementById("filesPopover");
+  if (filesPopover) filesPopover.style.display = "none";
+
+  // ترجع لداشبورد (إلى عندك sections)
+  document.querySelector(".main").scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+<script>
+const messageBtn = document.getElementById("messageBtn");
+const messagePopover = document.getElementById("messagePopover");
+const messageContent = document.getElementById("messageContent");
+
+messageBtn.addEventListener("click", () => {
+
+  messagePopover.style.display =
+    messagePopover.style.display === "block" ? "none" : "block";
+
+  messageContent.innerHTML = "";
+
+  const paymentStatus = localStorage.getItem("payment_status") || "unpaid";
+
+  if (paymentStatus === "paid") {
+    messageContent.innerHTML = `
+      <div class="file-item">
+        <strong>✅ Payment Confirmed</strong>
+        <span>Service has started</span>
+      </div>
+      <div class="file-item">
+        <strong>Status</strong>
+        <span>In progress</span>
+      </div>
+    `;
+  } else {
+    messageContent.innerHTML = `
+      <div class="file-item">
+        <strong>❌ Payment Missing</strong>
+        <span>Service not started</span>
+      </div>
+      <div class="file-item">
+        <strong>Action Required</strong>
+        <span>Please complete payment</span>
+      </div>
+    `;
+  }
+});
+</script>
+<script>
+document.addEventListener("click", e => {
+  if (
+    !filesPopover.contains(e.target) &&
+    !folderBtn.contains(e.target) &&
+    !messagePopover.contains(e.target) &&
+    !messageBtn.contains(e.target)
+  ) {
+    filesPopover.style.display = "none";
+    messagePopover.style.display = "none";
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =======================
+     AUTH CHECK
+  ======================= */
+  if (localStorage.getItem("client_logged") !== "true") {
+    window.location.href = "auth.html";
+    return;
+  }
+
+  /* =======================
+     SERVICES & OPTIONS
+  ======================= */
+  const SERVICES = {
+    "Landing Page": {
+      baseDays: 8,
+      options: [
+        { name: "Call To Action", price: 75, days: 2 },
+        { name: "Contact Form", price: 95, days: 2 },
+        { name: "Email / WhatsApp Integration", price: 110, days: 2 },
+        { name: "Basic SEO", price: 120, days: 3 },
+        { name: "Responsive Design", price: 50, days: 2 }
+      ]
+    }
+  };
+
+  /* =======================
+     LOAD SELECTED SERVICE
+  ======================= */
+  const serviceName = localStorage.getItem("selected_service");
+  if (!serviceName || !SERVICES[serviceName]) return;
+
+  const service = SERVICES[serviceName];
+
+  /* =======================
+     ELEMENTS
+  ======================= */
+  const optionsBox = document.getElementById("options-list");
+  const totalPriceEl = document.getElementById("totalPrice");
+  const payBtn = document.getElementById("payNowBtn");
+
+  let selectedOption = null;
+
+  totalPriceEl.innerText = "€0";
+  payBtn.disabled = true;
+  payBtn.style.opacity = "0.5";
+
+  /* =======================
+     RENDER OPTIONS
+  ======================= */
+  optionsBox.innerHTML = "";
+
+  service.options.forEach(opt => {
+    const label = document.createElement("label");
+    label.className = "option-item";
+    label.style.display = "block";
+    label.style.marginBottom = "10px";
+
+    label.innerHTML = `
+      <input type="radio" name="service_option">
+      ${opt.name} (+€${opt.price} / ${opt.days} Days)
+    `;
+
+    const input = label.querySelector("input");
+
+    input.addEventListener("change", () => {
+      selectedOption = opt;
+
+      totalPriceEl.innerText = `€${opt.price}`;
+      payBtn.disabled = false;
+      payBtn.style.opacity = "1";
+
+      localStorage.setItem("selected_option", JSON.stringify({
+        service: serviceName,
+        option: opt,
+        totalPrice: opt.price,
+        totalDays: service.baseDays + opt.days
+      }));
+    });
+
+    optionsBox.appendChild(label);
+  });
+
+  /* =======================
+     PAY BUTTON
+  ======================= */
+  payBtn.addEventListener("click", () => {
+    if (!selectedOption) return alert("Please select an option first");
+    alert("Redirect to PayPal 🚀");
+    // هنا من بعد دير PayPal integration
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (!logoutBtn) return;
+
+  logoutBtn.addEventListener("click", () => {
+
+    // نحيدو حالة الدخول
+    localStorage.removeItem("client_logged");
+
+    // اختيارياً: حيد حتى السيرفيس
+    localStorage.removeItem("selected_service");
+
+    // رجوع لصفحة الخدمات
+    window.location.href = "services.html";
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const paymentEl  = document.getElementById("paymentStep");
+  const projectEl  = document.getElementById("projectStep");
+  const deliveryEl = document.getElementById("deliveryDate");
+  const cardDaysEl = document.getElementById("cardDays");
+
+  const stored = localStorage.getItem("selected_service");
+  if (!stored) return;
+
+  const service = JSON.parse(stored);
+
+  // ✅ نحولو المدة لرقم صافي
+  const totalDays = Number(
+    service.totalDays || service.baseDays || service.duration || 0
+  );
+
+  let paymentStatus = localStorage.getItem("payment_status") || "pending";
+  let paymentDate   = localStorage.getItem("payment_date");
+
+  function updateOverview() {
+
+    if (cardDaysEl) {
+      cardDaysEl.innerText = `${totalDays} Days`;
+    }
+
+    if (paymentStatus === "pending") {
+      paymentEl.innerText = "Pending";
+      paymentEl.style.color = "#f59e0b";
+
+      projectEl.innerText = "Waiting";
+      projectEl.style.color = "#9ca3af";
+
+      deliveryEl.innerText = "—";
+      return;
+    }
+
+    if (paymentStatus === "paid" && paymentDate) {
+
+      const startDate = new Date(paymentDate);
+
+      // 🧠 حساب صحيح
+      const deliveryDate = new Date(startDate);
+      deliveryDate.setDate(startDate.getDate() + totalDays);
+
+      paymentEl.innerText = "Completed";
+      paymentEl.style.color = "#22c55e";
+
+      projectEl.innerText = "In Progress";
+      projectEl.style.color = "#22c55e";
+
+      deliveryEl.innerText = deliveryDate.toLocaleDateString("fr-FR", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+    }
+  }
+
+  updateOverview();
+
+  /* ======================
+     PAYMENT
+  ====================== */
+  const payBtn = document.getElementById("payNowBtn");
+  if (payBtn) {
+    payBtn.addEventListener("click", () => {
+
+      const now = new Date();
+
+      localStorage.setItem("payment_status", "paid");
+      localStorage.setItem("payment_date", now.toISOString());
+
+      paymentStatus = "paid";
+      paymentDate = now.toISOString();
+
+      updateOverview();
+    });
+  }
+
+});
+</script>
+<script>localStorage.setItem("payment_status", "waiting_paypal");
+window.location.href = paypalLink;
+localStorage.setItem("payment_status", "paid");
+localStorage.setItem("payment_date", new Date().toISOString());
+window.location.href = "dashboard.html";
+</script>
+<script>
+/* ======================
+   INIT EMAILJS
+====================== */
+emailjs.init("-r4oowBPgX5r_htCa");
+
+/* ======================
+   FEEDBACK FORM
+====================== */
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const status = document.getElementById("feedbackStatus");
+  status.innerText = "Sending...";
+  status.style.color = "#9ca3af";
+
+  emailjs.sendForm(
+    "service_dvtnhwf",   // ✅ Service ID
+    "template_1ywu0af",  // ✅ Template ID
+    this
+  ).then(() => {
+    status.innerText = "✅ Feedback sent successfully";
+    status.style.color = "#22c55e";
+    this.reset();
+  }).catch(error => {
+    status.innerText = "❌ Failed to send feedback";
+    status.style.color = "#ef4444";
+    console.error("EmailJS error:", error);
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =====================
+     LOAD SERVICE
+  ===================== */
+  const service = JSON.parse(localStorage.getItem("selected_service"));
+  if (!service) return;
+
+/* =====================
+   OPTIONS CONFIG
+===================== */
+const SERVICE_OPTIONS = {
+
+  /* =====================
+     WEBSITE SERVICES
+  ===================== */
+
+  "Landing Page Website": [
+    { name: "Call To Action", price: 75, days: 2 },
+    { name: "Contact Form", price: 95, days: 2 },
+    { name: "Email / WhatsApp Integration", price: 110, days: 2 },
+    { name: "Basic SEO", price: 120, days: 3 },
+    { name: "Responsive Design", price: 50, days: 2 }
+  ],
+
+  "Business Website": [
+    { name: "UI/UX + Page Design", price: 350, days: 3 },
+    { name: "Responsive Design", price: 150, days: 2 },
+    { name: "Pages Setup", price: 250, days: 3 },
+    { name: "Contact Form", price: 120, days: 1 },
+    { name: "Email + WhatsApp", price: 130, days: 1 }
+  ],
+
+  "E-commerce Website": [
+    { name: "UI/UX + Store Design", price: 600, days: 6 },
+    { name: "Responsive Design", price: 250, days: 3 },
+    { name: "Product Pages Setup", price: 450, days: 6 },
+    { name: "Cart & Checkout", price: 300, days: 3 },
+    { name: "Payment Integration", price: 300, days: 2 },
+    { name: "Shipping + Coupons Setup", price: 200, days: 2 },
+    { name: "Email Notifications", price: 150, days: 2 },
+    { name: "Basic SEO", price: 150, days: 3 },
+    { name: "Security & Optimization", price: 100, days: 2 }
+  ],
+
+  /* =====================
+     UX / UI DESIGN
+  ===================== */
+
+  "Mobile App UI/UX": [
+    { name: "User Research & Wireframes", price: 200, days: 3 },
+    { name: "UI Design (Screens)", price: 350, days: 4 },
+    { name: "Prototype (Figma)", price: 150, days: 2 },
+    { name: "Design System", price: 100, days: 1 }
+  ],
+
+  "Web App UI/UX": [
+    { name: "User Flow & Wireframes", price: 250, days: 3 },
+    { name: "UI Design", price: 450, days: 5 },
+    { name: "Interactive Prototype", price: 200, days: 3 },
+    { name: "Design Handoff", price: 100, days: 1 }
+  ],
+
+  /* =====================
+     PRINT DESIGN
+  ===================== */
+
+  "Basic Print Design": [
+    { name: "Business Card Design", price: 70, days: 1 },
+    { name: "Flyer / Poster Design", price: 120, days: 2 },
+    { name: "Simple Brochure (1–2 pages)", price: 110, days: 2 }
+  ],
+
+  "Standard Print Design": [
+    { name: "Business Card Design", price: 80, days: 1 },
+    { name: "Flyer / Poster Design", price: 140, days: 2 },
+    { name: "Brochure Design (4 pages)", price: 200, days: 3 },
+    { name: "Social Media Poster (Printable)", price: 130, days: 2 },
+    { name: "Print-Ready Files", price: 150, days: 2 }
+  ],
+
+  "Premium Print Design": [
+    { name: "Full Stationery Design", price: 300, days: 4 },
+    { name: "Brochure / Catalog Design", price: 400, days: 5 },
+    { name: "Marketing Materials", price: 350, days: 4 },
+    { name: "Packaging / Label Design", price: 100, days: 1 },
+    { name: "Print-Ready & Source Files", price: 50, days: 1 }
+  ],
+
+  /* =====================
+     BRAND IDENTITY
+  ===================== */
+
+  "Logo & Colors": [
+    { name: "Logo Design", price: 120, days: 2 },
+    { name: "Color Palette", price: 50, days: 1 },
+    { name: "Font Selection", price: 50, days: 1 },
+    { name: "Logo Usage Rules", price: 30, days: 1 }
+  ],
+
+  "Full Brand Identity": [
+    { name: "Logo Variations", price: 140, days: 2 },
+    { name: "Color System", price: 120, days: 2 },
+    { name: "Typography System", price: 120, days: 2 },
+    { name: "Brand Guidelines", price: 140, days: 2 },
+    { name: "Social Media Kit", price: 80, days: 2 }
+  ],
+
+  "Premium Branding": [
+    { name: "Brand Strategy", price: 250, days: 3 },
+    { name: "Logo System", price: 250, days: 3 },
+    { name: "Advanced Color System", price: 180, days: 2 },
+    { name: "Typography System", price: 180, days: 2 },
+    { name: "Full Brand Book", price: 250, days: 3 },
+    { name: "Marketing & Social Media Kit", price: 90, days: 2 }
+  ],
+
+  /* =====================
+     MOBILE DEVELOPMENT
+  ===================== */
+
+  "Simple Mobile App": [
+    { name: "Basic Features", price: 500, days: 5 },
+    { name: "Simple UI Design", price: 700, days: 7 },
+    { name: "Android or iOS Deployment", price: 500, days: 5 },
+    { name: "Testing & Bug Fixes", price: 300, days: 3 }
+  ],
+
+  "Standard Mobile App": [
+    { name: "Authentication", price: 700, days: 5 },
+    { name: "API Integration", price: 800, days: 6 },
+    { name: "Admin Panel", price: 600, days: 5 },
+    { name: "Android + iOS Deployment", price: 800, days: 6 },
+    { name: "UI/UX Design", price: 600, days: 5 },
+    { name: "Testing & Bug Fixes", price: 500, days: 3 }
+  ],
+
+  "Complex Mobile App": [
+    { name: "Advanced Features", price: 2000, days: 15 },
+    { name: "Custom Backend Development", price: 2000, days: 15 },
+    { name: "Payments & Subscriptions", price: 1200, days: 8 },
+    { name: "Notifications & Push Alerts", price: 800, days: 5 },
+    { name: "Android + iOS Deployment", price: 1000, days: 7 },
+    { name: "Full UI/UX Design", price: 1200, days: 8 },
+    { name: "Testing, QA & Bug Fixes", price: 800, days: 2 }
+  ]
+
+};
+
+  /* =====================
+     ELEMENTS
+  ===================== */
+  const serviceBox   = document.getElementById("serviceSelected");
+  const totalPriceEl = document.getElementById("totalPrice");
+  const payBtn       = document.getElementById("payNowBtn");
+
+  /* =====================
+     BASE VALUES
+  ===================== */
+  const basePrice = Number(service.price);
+  const baseDays  = Number(service.duration);
+
+  let selectedOptions = [];
+  let totalPrice = basePrice;
+  let totalDays  = baseDays;
+
+  totalPriceEl.innerText = `€${totalPrice}`;
+
+  /* =====================
+     CLEAR
+  ===================== */
+  serviceBox.innerHTML = "";
+
+  /* =====================
+     TITLE
+  ===================== */
+  serviceBox.innerHTML += `<h4>${service.name}</h4>`;
+
+  /* =====================
+     BASE PACKAGE (DISPLAY)
+  ===================== */
+  serviceBox.innerHTML += `
+    <div class="service-line">
+      <strong>Base Package</strong>
+      <span>€${basePrice} / ${baseDays} days</span>
+    </div>
+  `;
+
+  /* =====================
+     OPTIONS
+  ===================== */
+  const options = SERVICE_OPTIONS[service.name] || [];
+
+  options.forEach(opt => {
+
+    const label = document.createElement("label");
+    label.className = "option-item";
+
+label.innerHTML = `
+  <input type="checkbox">
+  <span>${opt.name}</span>
+  <small>${opt.days} days</small>
+`;
+
+
+
+    const checkbox = label.querySelector("input");
+
+    checkbox.addEventListener("change", () => {
+
+      if (checkbox.checked) {
+        selectedOptions.push(opt);
+      } else {
+        selectedOptions = selectedOptions.filter(o => o.name !== opt.name);
+      }
+
+      /* =====================
+         PRICE LOGIC (IMPORTANT)
+      ===================== */
+      if (selectedOptions.length > 0) {
+        totalPrice = selectedOptions.reduce(
+          (sum, o) => sum + o.price,
+          0
+        );
+        totalDays = selectedOptions.reduce(
+          (sum, o) => sum + o.days,
+          0
+        );
+      } else {
+        totalPrice = basePrice;
+        totalDays  = baseDays;
+      }
+
+      totalPriceEl.innerText = `€${totalPrice}`;
+
+      localStorage.setItem("selected_service", JSON.stringify({
+        ...service,
+        totalPrice,
+        totalDays,
+        selectedOptions
+      }));
+    });
+
+    serviceBox.appendChild(label);
+  });
+
+  /* =====================
+     PAYPAL
+  ===================== */
+  const PAYPAL_USERNAME = "Salhi321";
+
+  payBtn.addEventListener("click", () => {
+    window.location.href =
+      `https://www.paypal.me/${PAYPAL_USERNAME}/${totalPrice}`;
+  });
+
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logopng.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Services Webyoupro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            opacity: 0.5;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: -20px -10px; /* نقصنا الارتفاع */
+            margin-top: 180px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero small {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 25px;
+        }
+
+        /* IMAGE STYLE */
+        .hero-img {
+            width: 85%;
+            margin: 90px auto;
+            display: block;
+            border-radius: 40px;
+        }
+
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+/* SOLUTIONS SECTION */
+.solutions {
+    width: 85%;
+    margin: 80px auto;
+}
+
+.solutions-title {
+    font-size: 42px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.solution-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+}
+
+.solution-item .left {
+    width: 30%;
+}
+
+.solution-item .left h3 {
+    font-size: 30px;
+}
+
+.solution-item .right {
+    width: 65%;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    .solution-item {
+        flex-direction: column;
+    }
+
+    .solution-item .left,
+    .solution-item .right {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+}
+.logo {
+  width: 130px;        /* قدّر الحجم اللي بغيتي */
+  height: auto;
+  object-fit: contain;
+  background: none;   /* مهم */
+  box-shadow: none;   /* مهم */
+  border-radius: 0;   /* باش مايتقصّش اللوغو */
+}
+footer {
+  padding-bottom: 0px !important;   /* نقص المسافة */
+  margin-bottom: 0 !important;       /* شيل المارجن لي تحت */
+}
+.wyp-footer {
+  background: #000000;
+  color: #fff;
+  padding: 50px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.wyp-container {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.wyp-logo {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.wyp-desc {
+  font-size: 15px;
+  color: #bbb;
+  max-width: 260px;
+  line-height: 1.6;
+}
+
+.wyp-right {
+  text-align: right;
+}
+
+.wyp-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.wyp-link:hover {
+  color: #C0584F;
+}
+
+.wyp-copy {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wyp-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .wyp-right {
+    text-align: center;
+  }
+}
+.wyp-logo {
+  width: 140px;      /* صغّر أو كبر حسب الحجم */
+  height: auto;
+}
+nav ul li a {
+    text-decoration: none;   /* تحييد الخط تحت الرابط */
+    color: inherit;          /* يرجع اللون الأصلي بلا ما يتبدل */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.6;            /* تأثير زوين فـ hover */
+}
+nav {
+    width: 100%;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav .logo {
+    width: 130px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    opacity: 0.5;
+}
+
+/* زر المنيو فالموبايل */
+.menu-btn {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/*       MOBILE          */
+/* ===================== */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 12px 6%;
+    }
+
+    /* كنبينو زر المنيو */
+    .menu-btn {
+        display: block;
+        user-select: none;
+    }
+
+    /* كيختفي الـ UL فالوضع العادي */
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        flex-direction: column;
+        padding: 25px 0;
+        text-align: center;
+        gap: 25px;
+        display: none;
+    }
+
+    /* ملي كيتفتح */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+.solution-item {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.service-details {
+  display: none;
+  margin-top: 15px;
+}
+
+.budget-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.budget-options button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+.budget-pill {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.budget-pill:hover {
+  background: #000;
+  color: #fff;
+}
+.wyp-footer {
+  background: #000;
+  color: #fff;
+  padding: 120px 8vw 20px; /* نقصنا المسافة لتحت */
+  position: relative;
+  z-index: 1;
+    padding-bottom: 16px;
+}
+
+.wyp-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.wyp-logo {
+  width: 140px;
+  margin-bottom: 24px;
+}
+
+.wyp-desc {
+  color: #aaa;
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+/* columns */
+.wyp-footer-col h4 {
+  font-size: 15px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.wyp-footer-col a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 14px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.wyp-footer-col a:hover {
+  color: #fff;
+}
+
+/* socials */
+.wyp-socials {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+}
+
+/* bottom */
+.wyp-footer-bottom {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .wyp-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+.video-cta {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.video-cta:hover .video-text {
+  opacity: 0.85;
+}
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .solution-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .solution-item .left {
+    width: 100%;
+  }
+
+  .solution-item .left h3 {
+    font-size: 18px;
+  }
+
+  .solution-item .right {
+    width: 100%;
+  }
+
+  .solution-item .right p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .solution-item .btn {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .service-details {
+    margin-top: 12px;
+  }
+
+  .budget-pill {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  hr {
+    margin: 24px 0;
+  }
+}
+.services-cta {
+  margin: 120px auto;
+  padding: 80px 30px;
+  max-width: 1100px;
+  text-align: center;
+  background: linear-gradient(135deg, #C0584F, #C0584F);
+  border-radius: 28px;
+  color: white;
+}
+
+.services-cta h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.services-cta p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 16px 38px;
+  background: white;
+  color: #C0584F;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+<nav>
+<a href="index.html">
+  <img src="pn1.png" alt="Logo" class="logo" />
+</a>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="nav-links" class="nav-center">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projet.html">Projects</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="kontakt.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <small>Our services</small>
+        <h1>Turning Vision <br> Into Impact </h1>
+    </section>
+
+    <!-- IMAGE -->
+<video class="hero-img" autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+</video>
+    <!-- SOLUTIONS SECTION (الكود لي عطيتيني ودمجتو ليك) -->
+    <section class="solutions">
+
+        <h2 class="solutions-title">Our Services</h2>
+
+        <!-- واحد الخدمة -->
+<div class="solution-item">
+  <div class="left">
+    <h3>Website Design</h3>
+  </div>
+
+  <div class="right">
+    <p>Modern, fast and responsive websites tailored to your business.</p>
+    <a class="btn" href="#" data-target="web-content">Read more</a>
+
+    <div class="service-details" id="web-content">
+      <p>Select a package:</p>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Landing Page Website"
+         data-price="450"
+         data-duration="8">
+        Landing Page — $450
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Business Website"
+         data-price="1200"
+         data-duration="15">
+        Business Website — $1,200
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="E-commerce Website"
+         data-price="2500"
+         data-duration="25">
+        E-commerce Website — $2,500
+      </a>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="solution-item">
+  <div class="left">
+    <h3>UX / UI Design</h3>
+  </div>
+
+  <div class="right">
+    <p>User-centered design focused on usability and experience.</p>
+    <a class="btn" href="#" data-target="ux-content">Read more</a>
+
+    <div class="service-details" id="ux-content">
+      <p>Select a package:</p>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Mobile App UI/UX"
+         data-price="800"
+         data-duration="10">
+        Mobile App UI/UX — $800
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Web App UI/UX"
+         data-price="1000"
+         data-duration="12">
+        Web App UI/UX — $1,000
+      </a>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="solution-item">
+  <div class="left">
+    <h3>Print Design</h3>
+  </div>
+
+  <div class="right">
+    <p>Professional print-ready design solutions.</p>
+    <a class="btn" href="#" data-target="print-content">Read more</a>
+
+    <div class="service-details" id="print-content">
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Basic Print Design"
+         data-price="300"
+         data-duration="5">
+        Basic Print — $300
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Standard Print Design"
+         data-price="700"
+         data-duration="10">
+        Standard Print — $700
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Premium Print Design"
+         data-price="1200"
+         data-duration="15">
+        Premium Print — $1,200
+      </a>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="solution-item">
+  <div class="left">
+    <h3>Brand Identity</h3>
+  </div>
+
+  <div class="right">
+    <p>Build a strong and recognizable brand.</p>
+    <a class="btn" href="#" data-target="brand-content">Read more</a>
+
+    <div class="service-details" id="brand-content">
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Logo & Colors"
+         data-price="250"
+         data-duration="5">
+        Logo & Colors — $250
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Full Brand Identity"
+         data-price="600"
+         data-duration="10">
+        Full Brand Identity — $600
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Premium Branding"
+         data-price="1200"
+         data-duration="15">
+        Premium Branding — $1,200
+      </a>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="solution-item">
+  <div class="left">
+    <h3>Mobile Development</h3>
+  </div>
+
+  <div class="right">
+    <p>High-performance mobile applications.</p>
+    <a class="btn" href="#" data-target="mobile-content">Read more</a>
+
+    <div class="service-details" id="mobile-content">
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Simple Mobile App"
+         data-price="2000"
+         data-duration="20">
+        Simple App — $2,000
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Standard Mobile App"
+         data-price="4000"
+         data-duration="30">
+        Standard App — $4,000
+      </a>
+
+      <a href="#" class="budget-pill select-service"
+         data-service="Complex Mobile App"
+         data-price="8000"
+         data-duration="60">
+        Complex App — $8,000+
+      </a>
+    </div>
+  </div>
+</div>
+<section class="services-cta">
+  <h2>Want to see real results?</h2>
+  <p>
+    Discover our latest projects and see how we transform ideas into powerful digital experiences.
+  </p>
+  <a href="projet.html" class="cta-btn">View Our Projects</a>
+</section>
+
+
+
+<footer class="wyp-footer">
+  <div class="wyp-container">
+
+    <!-- LEFT -->
+    <div class="wyp-footer-brand">
+      <a href="index.html">
+        <img src="pn1.png" alt="WebYouPro Logo" class="wyp-logo">
+      </a>
+
+      <p class="wyp-desc">
+        We build clean, modern & high-performance websites that help brands grow online.
+      </p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="wyp-footer-col">
+      <h4>Services</h4>
+
+      <a href="services.html#website-design">Website Design</a>
+      <a href="services.html#ux-ui-design">UX/UI Design</a>
+      <a href="services.html#product-design">Product Design</a>
+      <a href="services.html#motion-graphics">Motion Graphics</a>
+      <a href="services.html#brand-identity">Brand Identity</a>
+      <a href="services.html#mobile-development">Mobile Development</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="wyp-footer-col">
+      <h4>Contact</h4>
+
+      <a href="mailto:contact@webyoupro.com">contact@webyoupro.com</a>
+      <a href="mailto:info@webyoupro.com">info@webyoupro.com</a>
+
+      <div class="wyp-socials">
+
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wyp-footer-bottom">
+    © 2025 WebYouPro. All rights reserved.
+  </div>
+</footer>
+
+    </section>
+<video crossorigin="anonymous" autoplay="" playsinline="" loop="" muted=""><source src="/assets/footer/ropes.mp4" media="(min-width:768px)"><source src="/assets/footer/ropes-sm.mp4?2"></video>
+
+<script>
+/* ================================
+   NAVBAR TOGGLE
+================================ */
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("active");
+}
+
+/* ================================
+   TOGGLE SERVICE DETAILS
+================================ */
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+
+    // سد جميع التفاصيل
+    document.querySelectorAll('.service-details').forEach(el => {
+      if (el !== target) el.style.display = 'none';
+    });
+
+    // فتح / إغلاق الحالية
+    target.style.display =
+      target.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+/* ================================
+   SERVICE SELECT → STORE → AUTH
+================================ */
+document.querySelectorAll(".select-service").forEach(item => {
+  item.addEventListener("click", function(e){
+    e.preventDefault();
+
+    const serviceName = this.dataset.service;
+    const servicePrice = this.dataset.price;
+    const serviceDuration = this.dataset.duration;
+
+    // هيكل الخدمة لي كيعرفها auth + dashboard
+    const service = {
+      name: serviceName,
+      price: servicePrice,
+      duration: serviceDuration,
+      options: [
+        {
+          name: serviceName,
+          price: servicePrice,
+          days: serviceDuration
+        }
+      ]
+    };
+
+    // تخزين الخدمة
+    localStorage.setItem("selected_service", JSON.stringify(service));
+
+    // مسح أي login قديم
+    localStorage.removeItem("client_logged");
+
+    // توجيه مباشر للأوت
+    window.location.href = "auth.html";
+  });
+});
+
+/* ================================
+   SERVICES DATA
+================================ */
+const SERVICES = {
+  website_design: {
+    title: "Website Design",
+    packages: {
+      landing: {
+        name: "Landing Page",
+        days: 8,
+        price: 450,
+        options: {
+          cta: { name: "Call To Action", days: 2, price: 75 },
+          contact: { name: "Contact Form", days: 2, price: 95 },
+          integration: { name: "Email / WhatsApp Integration", days: 2, price: 110 },
+          seo: { name: "Basic SEO", days: 3, price: 120 },
+          responsive: { name: "Responsive Design", days: 2, price: 50 }
+        }
+      },
+      business: {
+        name: "Business Website",
+        days: 15,
+        price: 1200,
+        options: {
+          uiux: { name: "UI/UX + Page Design", days: 3, price: 350 },
+          responsive: { name: "Responsive Design", days: 2, price: 150 },
+          pages: { name: "Pages Setup", days: 3, price: 250 },
+          contact: { name: "Contact Form", days: 1, price: 120 },
+          integration: { name: "Email + WhatsApp", days: 1, price: 130 },
+          seo: { name: "Basic SEO", days: 2, price: 150 },
+          speed: { name: "Speed Optimization", days: 1, price: 50 }
+        }
+      }
+    }
+  },
+
+  ux_ui: {
+    title: "UX / UI Design",
+    packages: {
+      mobile: {
+        name: "Mobile App UI/UX",
+        days: 10,
+        price: 800,
+        options: {
+          research: { name: "User Research & Wireframes", days: 3, price: 200 },
+          ui: { name: "UI Design", days: 4, price: 350 },
+          prototype: { name: "Prototype (Figma)", days: 2, price: 150 },
+          system: { name: "Design System", days: 1, price: 100 }
+        }
+      }
+    }
+  }
+};
+
+/* ================================
+   CART LOGIC (OPTION ADD/REMOVE)
+================================ */
+let cart = {
+  service: null,
+  package: null,
+  options: [],
+  totalPrice: 0,
+  totalDays: 0
+};
+
+function selectPackage(serviceKey, packageKey) {
+  const pkg = SERVICES[serviceKey].packages[packageKey];
+
+  cart.service = serviceKey;
+  cart.package = packageKey;
+  cart.options = [];
+  cart.totalPrice = pkg.price;
+  cart.totalDays = pkg.days;
+
+  saveCart();
+}
+
+function toggleOption(serviceKey, packageKey, optionKey) {
+  const option = SERVICES[serviceKey].packages[packageKey].options[optionKey];
+
+  const index = cart.options.findIndex(o => o.key === optionKey);
+
+  if (index > -1) {
+    cart.options.splice(index, 1);
+    cart.totalPrice -= option.price;
+    cart.totalDays -= option.days;
+  } else {
+    cart.options.push({ key: optionKey, ...option });
+    cart.totalPrice += option.price;
+    cart.totalDays += option.days;
+  }
+
+  saveCart();
+}
+
+function saveCart() {
+  localStorage.setItem("userService", JSON.stringify(cart));
+}
+</script>
+<script>const service = {
+  mainService: "Website Design",
+  package: serviceName,
+
+  basePrice: Number(servicePrice),
+  baseDays: Number(serviceDuration),
+
+  options: [
+    { name: "Call To Action", price: 75, days: 2 },
+    { name: "Contact Form", price: 95, days: 2 },
+    { name: "Email / WhatsApp Integration", price: 110, days: 2 },
+    { name: "Basic SEO", price: 120, days: 3 },
+    { name: "Responsive Design", price: 50, days: 2 }
+  ],
+
+  selectedOptions: [],
+
+  totalPrice: Number(servicePrice),
+  totalDays: Number(serviceDuration)
+};
+
+localStorage.setItem("selected_service", JSON.stringify(service));
+window.location.href = "auth.html";
+</script>
+</body>
+</html>

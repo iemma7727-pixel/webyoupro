@@ -816,6 +816,22 @@ nav ul li:hover {
     gap: 50px;
   }
 }
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
 </style>
 <head>
 <body>
@@ -860,58 +876,7 @@ nav ul li:hover {
   </div>
 
   <!-- DETAILS -->
-  <div class="service-details" id="web-content">
-    <p>Choose your website type:</p>
-    <div class="budget-options">
-      <a class="budget-pill" href="#">Landing Page (400$–800$)</a>
-      <a class="budget-pill" href="#">Business Website (900$–2k$)</a>
-      <a class="budget-pill" href="#">E-commerce (3k–4k$)</a>
-    </div>
-  </div>
 
-  <div class="service-details" id="ux-content">
-    <p>Choose your UX/UI package:</p>
-    <div class="budget-options">
-      <a class="budget-pill" href="#">Mobile App (2k$)</a>
-      <a class="budget-pill" href="#">Web App (4k$)</a>
-    </div>
-  </div>
-
-  <div class="service-details" id="product-content">
-    <p>Choose your product design package:</p>
-    <div class="budget-options">
-      <a class="budget-pill" href="#">Basic (400$–800$)</a>
-      <a class="budget-pill" href="#">Standard (900$–1k$)</a>
-      <a class="budget-pill" href="#">Premium (2k$)</a>
-    </div>
-  </div>
-
-  <div class="service-details" id="motion-content">
-    <p>Choose your motion package:</p>
-    <div class="budget-options">
-      <a class="budget-pill" href="#">Short Animation (1k–2k)</a>
-      <a class="budget-pill" href="#">Explainer Video (3k–4k)</a>
-      <a class="budget-pill" href="#">Full Production (5k–6k)</a>
-    </div>
-  </div>
-
-  <div class="service-details" id="brand-content">
-    <p>Choose your branding package:</p>
-    <div class="budget-options">
-      <a class="budget-pill" href="#">Logo & Colors (400$–800$)</a>
-      <a class="budget-pill" href="#">Full Identity (900$–1k$)</a>
-      <a class="budget-pill" href="#">Premium Branding (2k–3k)</a>
-    </div>
-  </div>
-
-  <div class="service-details" id="mobile-content">
-    <p>Choose your mobile app package:</p>
-    <div class="budget-options">
-      <a class="budget-pill" href="#">Simple App (2k–3k)</a>
-      <a class="budget-pill" href="#">Standard App (4k–5k)</a>
-      <a class="budget-pill" href="#">Complex App (6k–7k)</a>
-    </div>
-  </div>
 
   <!-- FORM -->
 <section class="contact-section">
@@ -957,9 +922,8 @@ nav ul li:hover {
 </div>
 
 
-<button type="button" class="send-btn" id="sendWhatsapp">
-  Send request
-</button>
+<button class="send-btn" id="sendEmail">Send request</button>
+
 </div>
 
 
@@ -1105,27 +1069,52 @@ document.querySelectorAll('.service-pill').forEach(pill => {
 });
 </script>
 <script>
-document.getElementById("sendWhatsapp").addEventListener("click", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const name = document.getElementById("userName").value.trim();
-  const email = document.getElementById("userEmail").value.trim();
-  const project = document.getElementById("userProject").value.trim();
+  let selectedService = "—";
+  let selectedOption = "—";
 
-  const phone = "212785443932"; // رقم واتساب ديالك
+  /* SERVICE SELECT */
+  document.querySelectorAll(".service-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      selectedService = pill.textContent;
+    });
+  });
 
-  const message = `
-Hello 👋
+  document.querySelectorAll(".budget-pill").forEach(option => {
+    option.addEventListener("click", () => {
+      selectedOption = option.textContent;
+    });
+  });
 
-Name: ${name || "—"}
-Email: ${email || "—"}
+  /* EMAIL SEND */
+  document.getElementById("sendEmail").addEventListener("click", () => {
 
-Project:
-${project || "—"}
-  `;
+    const name = document.getElementById("userName").value || "—";
+    const email = document.getElementById("userEmail").value || "—";
+    const project = document.getElementById("userProject").value || "—";
 
-  const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    const toEmail = "your@email.com"; // ⬅️ بدلها بإيميلك
 
-  window.open(whatsappURL, "_blank");
+    const subject = `New Service Request - ${selectedService}`;
+
+    const body = `
+New Service Request
+
+Name: ${name}
+Client Email: ${email}
+
+Service: ${selectedService}
+Option: ${selectedOption}
+
+Project Details:
+${project}
+    `;
+
+    window.location.href =
+      `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
 });
 </script>
 
