@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="logopng.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth</title>
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<div class="auth-wrapper">
+
+  <!-- LEFT VIDEO -->
+  <div class="auth-image">
+    <video class="auth-video" autoplay muted loop playsinline>
+      <source src="sign up.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- FORM -->
+<div class="auth-form">
+  <h1 id="formTitle"></h1>
+  <p class="small-text" id="toggleText"></p>
+
+  <form id="authForm">
+    <input type="text" id="nameField" name="from_name" placeholder="Full Name">
+    <input type="email" id="emailField" name="from_email" placeholder="Email Address" required>
+    <input type="password" id="passwordField" placeholder="Password" required>
+
+    <!-- TERMS -->
+    <label class="terms">
+      <label class="terms-check">
+        <input type="checkbox" id="acceptTerms">
+        <span class="checkmark"></span>
+        <span class="terms-text">
+          I agree to the
+          <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>
+          and
+          <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>.
+        </span>
+      </label>
+    </label>
+
+    <button type="submit" id="submitBtn"></button>
+    <p id="formMessage" style="display:none;"></p>
+  </form>
+</div>
+
+<!-- =========================
+     EMAILJS SDK
+========================= -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  // =========================
+  // INITIALIZE EMAILJS
+  // =========================
+  emailjs.init("r4oowBPgX5r_htCa"); // Your Public Key
+
+  // =========================
+  // MODE FROM URL (login/signup)
+  // =========================
+  const params = new URLSearchParams(window.location.search);
+  const mode = params.get("mode") === "login" ? "login" : "signup";
+
+/* =========================
+   INIT UI
+========================= */
+function initAuthUI() {
+  const title = document.getElementById("formTitle");
+  const toggle = document.getElementById("toggleText");
+  const nameField = document.getElementById("nameField");
+  const submitBtn = document.getElementById("submitBtn");
+  const terms = document.querySelector(".terms");
+
+  if (mode === "login") {
+    title.innerHTML = "Log in to your<br><span>Client Space</span>";
+    toggle.innerHTML = `No account? <a href="auth.html?mode=signup">Sign up</a>`;
+    nameField.style.display = "none";
+    terms.style.display = "none";
+    submitBtn.innerHTML = `Log in →`;
+  } else {
+    title.innerHTML = "Let’s get started<br><span>Create your account in seconds</span>";
+    toggle.innerHTML = `Already have an account? <a href="auth.html?mode=login">Log in</a>`;
+    nameField.style.display = "block";
+    terms.style.display = "flex";
+    submitBtn.innerHTML = `Start Creating →`;
+  }
+}
+initAuthUI();
+
+/* =========================
+   SUBMIT
+========================= */
+document.getElementById("authForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = nameField.value;
+  const email = emailField.value;
+  const password = passwordField.value;
+  const accepted = document.getElementById("acceptTerms").checked;
+
+  /* ===== SIGN UP ===== */
+  if (mode === "signup") {
+
+    if (!accepted) {
+      alert("❌ Please accept the Terms & Conditions");
+      return;
+    }
+
+const user = { name, email, password };
+
+localStorage.setItem("client_user", JSON.stringify(user));
+localStorage.setItem("client_logged", "true");
+localStorage.setItem("client_name", name); // ✅ مهم
+
+
+    /* SEND EMAIL */
+    emailjs.send(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      {
+        name: name,
+        email: email
+      }
+    ).catch(err => console.log(err));
+
+    alert("✅ Account created. Please choose a service.");
+    window.location.href = "services.html";
+  }
+
+  /* ===== LOGIN ===== */
+  else {
+    const storedUser = JSON.parse(localStorage.getItem("client_user"));
+
+    if (!storedUser || storedUser.email !== email || storedUser.password !== password) {
+      alert("❌ Invalid email or password");
+      return;
+    }
+
+    localStorage.setItem("client_logged", "true");
+
+    const service = localStorage.getItem("selected_service");
+    window.location.href = service ? "dashboard.html" : "services.html";
+  }
+});
+</script>
+
+</body>
+</html>
